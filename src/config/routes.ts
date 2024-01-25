@@ -3,7 +3,10 @@ const {fixRequestBody } = require('http-proxy-middleware');
 export const ROUTES = [
     {
         url: `${root}/borrower`,
-        auth: true,
+        auth: {
+            "POST": false,
+            "default": true
+        },
         methodCheck: true,
         methodAllow: {
             "Admin": ["GET", "POST", "PUT", "DELETE"],
@@ -19,19 +22,45 @@ export const ROUTES = [
             target: "http://localhost:3001/api/v1/borrower",
             changeOrigin: true,
             pathRewrite: {
-                [`^${root}/login`]: '',
+                [`^${root}/borrower`]: '',
             },
             onProxyReq: fixRequestBody,
         }
     },
     {
+        url: `${root}/contract`,
+        auth: {
+            "default": true
+        },
+        methodCheck: true,
+        methodAllow: {
+            "Admin": ["GET", "POST", "PUT", "DELETE"],
+            "Employee": ["GET", "POST", "PUT", "DELETE"],
+            "Borrower": ["GET", "POST"],
+            "Lender": ["GET", "POST", "PUT"],
+            "other": ["GET"],
+        },
+        rateLimit: {
+            windowMs: 15 * 60 * 1000,
+            max: 5
+        },
+        proxy: false
+    },
+    {
         url: `${root}/employees`,
-        auth: true,
+        auth: {
+            "POST": false,
+            "default": true
+        },
         methodCheck: true,
         methodAllow: {
             "Admin": ["GET", "POST", "PUT", "DELETE"],
             "Employee": ["GET", "POST", "PUT", "DELETE"],
             "other": ["GET"],
+        },
+        rateLimit: {
+            windowMs: 15 * 60 * 1000,
+            max: 5
         },
         proxy: {
             target: "http://localhost:3001/api/v1/employees",
@@ -44,10 +73,16 @@ export const ROUTES = [
     },
     {
         url: `${root}/login`,
-        auth: false,
+        auth: {
+            "default": false
+        },
         methodCheck: true,
         methodAllow: {
             "other": ["POST"],
+        },
+        rateLimit: {
+            windowMs: 15 * 60 * 1000,
+            max: 5
         },
         proxy: {
             target: "http://localhost:3001/api/v1/authenticaion/login",
