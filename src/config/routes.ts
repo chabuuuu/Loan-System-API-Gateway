@@ -28,6 +28,29 @@ export const ROUTES = [
         }
     },
     {
+        url: `${root}/worker/schedule`,
+        auth: {
+            "default": true
+        },
+        methodCheck: true,
+        methodAllow: {
+            "Admin": ["GET", "POST", "PUT", "DELETE"],
+            "other": [""],
+        },
+        rateLimit: {
+            windowMs: 15 * 60 * 1000,
+            max: 5
+        },
+        proxy: {
+            target: "http://localhost:3002/api/v1/schedule",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^${root}/worker/schedule`]: '',
+            },
+            onProxyReq: fixRequestBody,
+        }
+    },
+    {
         url: `${root}/contract`,
         auth: {
             "default": true

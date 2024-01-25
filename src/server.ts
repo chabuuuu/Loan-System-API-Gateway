@@ -27,7 +27,6 @@ setupRateLimit(app, ROUTES);
 requestAuthCheck(app, ROUTES);
 requestMethodCheck(app, ROUTES);
 setupProxies(app, ROUTES);
-//setupRabbitmq(app, ROUTES);
 setupErrorHandle(app, ROUTES)
 app.post('/api/v1/contract', loanContractRabbitMQ.createLoanContract);
 app.all('*', (req: any, res: any, next: any) => {
