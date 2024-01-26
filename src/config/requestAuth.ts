@@ -4,17 +4,6 @@ const jwt = require('jsonwebtoken');
 const authURL = process.env.AUTH_URL || 'http://localhost:3001/api/v1/authenticaion/me';
 async function getUser(token: string) {
     try {
-        // jwt.verify(token, process.env.JWT_SECRET, (err: any, user: any) => {
-        //     if (err) {
-        //         console.log(err);
-
-        //         throw new BaseError(403, 'failed', err.message);
-        //         // return res.status(403).json({ message: 'JWT không hợp lệ' });
-        //     }
-        //     //console.log("jwt user::::", user);
-        //     return user;
-        // });
-
       const user = await axios.get(authURL, {headers: {
         'Authorization': token
       }});
@@ -40,20 +29,23 @@ export const requestAuthCheck = (app: any, routes: any) => {
             app.use(r.url, async function(req: any, res: any, next: any) {
                 try {
                     if (getAuthOrNot(r, req.method) == false){
-                      console.log("No need auth");
-                        
+                      console.log("No need auth");     
+                      req.user = {
+                        id: "",
+                        username: "",
+                        role: "anonymous"};     
                       next();
                     }
                     else{
                       const token = req.get('Authorization')
                       const user : any = await getUser(token);
-                      console.log("user::::", user);
-                      req.role = user.role;
+                      delete user.status;
+                      req.user = user;
                       next();
                     }
                 } catch (error: any) {
                     console.log(error.message);
-                    next(error)    //res.status(402).json(JSON.parse(error.message));
+                    next(error)   
                 }
             });
     })

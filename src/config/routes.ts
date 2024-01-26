@@ -1,10 +1,13 @@
+import { configReq } from "../utils/configReq"
+
 const root = '/api/v1'
-const {fixRequestBody } = require('http-proxy-middleware');
+
+
 export const ROUTES = [
     {
         url: `${root}/borrower`,
         auth: {
-            "POST": false,
+            //"POST": false,
             "default": true
         },
         methodCheck: true,
@@ -24,7 +27,7 @@ export const ROUTES = [
             pathRewrite: {
                 [`^${root}/borrower`]: '',
             },
-            onProxyReq: fixRequestBody,
+            onProxyReq: configReq,
         }
     },
     {
@@ -47,7 +50,7 @@ export const ROUTES = [
             pathRewrite: {
                 [`^${root}/worker/schedule`]: '',
             },
-            onProxyReq: fixRequestBody,
+            onProxyReq: configReq,
         }
     },
     {
@@ -59,20 +62,25 @@ export const ROUTES = [
         methodAllow: {
             "Admin": ["GET", "POST", "PUT", "DELETE"],
             "Employee": ["GET", "POST", "PUT", "DELETE"],
-            "Borrower": ["GET", "POST"],
-            "Lender": ["GET", "POST", "PUT"],
             "other": ["GET"],
         },
         rateLimit: {
             windowMs: 15 * 60 * 1000,
             max: 5
         },
-        proxy: false
+        //proxy: false
+        proxy: {
+            target: "http://localhost:3001/api/v1/contract",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^${root}/contract`]: '',
+            },
+            onProxyReq:  configReq,
+        }
     },
     {
         url: `${root}/employees`,
         auth: {
-            "POST": false,
             "default": true
         },
         methodCheck: true,
@@ -91,7 +99,57 @@ export const ROUTES = [
             pathRewrite: {
                 [`^${root}/employees`]: '',
             },
-            onProxyReq: fixRequestBody,
+            onProxyReq: configReq,
+        }
+    },
+    {
+        url: `${root}/loanpackage`,
+        auth: {
+            "GET": false,
+            "default": true
+        },
+        methodCheck: true,
+        methodAllow: {
+            "Admin": ["GET", "POST", "PUT", "DELETE"],
+            "Employee": ["GET", "POST", "PUT", "DELETE"],
+            "other": ["GET"],
+        },
+        rateLimit: {
+            windowMs: 15 * 60 * 1000,
+            max: 5
+        },
+        proxy: {
+            target: "http://localhost:3001/api/v1/loanpackage",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^${root}/loanpackage`]: '',
+            },
+            onProxyReq: configReq,
+        }
+    },
+    {
+        url: `${root}/lender`,
+        auth: {
+            "GET": false,
+            "default": true
+        },
+        methodCheck: true,
+        methodAllow: {
+            "Admin": ["GET", "POST", "PUT", "DELETE"],
+            "Employee": ["GET", "POST", "PUT", "DELETE"],
+            "other": ["GET"],
+        },
+        rateLimit: {
+            windowMs: 15 * 60 * 1000,
+            max: 5
+        },
+        proxy: {
+            target: "http://localhost:3001/api/v1/lender",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^${root}/lender`]: '',
+            },
+            onProxyReq: configReq,
         }
     },
     {
@@ -113,7 +171,7 @@ export const ROUTES = [
             pathRewrite: {
                 [`^${root}/login`]: '',
             },
-            onProxyReq: fixRequestBody,
+            onProxyReq: configReq,
         }
     }
 ]

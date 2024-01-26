@@ -11,6 +11,7 @@ import { setupErrorHandle } from './config/errorHandle';
 const morgan = require("morgan");
 import 'dotenv/config'
 import { LoanContractRabbitMQ } from './rabbitmq/LoanContract/LoanContract.rabbitmq';
+import { rabbitmqRoute } from './config/rabbitMQ_route';
 const loanContractRabbitMQ  = new LoanContractRabbitMQ();
 const app = express();
 const port = 3000;
@@ -26,9 +27,10 @@ setupLogging(app);
 setupRateLimit(app, ROUTES);
 requestAuthCheck(app, ROUTES);
 requestMethodCheck(app, ROUTES);
+rabbitmqRoute(app);
 setupProxies(app, ROUTES);
 setupErrorHandle(app, ROUTES)
-app.post('/api/v1/contract', loanContractRabbitMQ.createLoanContract);
+//app.post('/api/v1/contract', loanContractRabbitMQ.createLoanContract);
 app.all('*', (req: any, res: any, next: any) => {
     const status = 'fail';
     const statusCode = 404;

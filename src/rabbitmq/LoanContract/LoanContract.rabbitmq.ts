@@ -35,6 +35,7 @@ export class LoanContractRabbitMQ{
             const {contractChanel, queue} = await getContractChanel();
 
             req.body.routingKey = queue;
+            req.body.user = req.user;
             console.log("Body::",req.body);
                               
             await createContractChanel.sendToQueue('CREATE_CONTRACT', Buffer.from(JSON.stringify(req.body)));
