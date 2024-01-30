@@ -1,5 +1,4 @@
 import express from 'express';
-import { setupLogging } from './config/logging';
 import { ROUTES } from './config/routes';
 import { setupProxies } from './config/proxy';
 import { setupRateLimit } from './config/ratelimit';
@@ -12,6 +11,7 @@ const morgan = require("morgan");
 import 'dotenv/config'
 import { LoanContractRabbitMQ } from './rabbitmq/LoanContract/LoanContract.rabbitmq';
 import { rabbitmqRoute } from './config/rabbitMQ_route';
+import { createLogging } from './config/logging';
 const loanContractRabbitMQ  = new LoanContractRabbitMQ();
 const app = express();
 const port = 3000;
@@ -22,8 +22,9 @@ app.use(
 );
 app.use(express.json());
 app.use(helmet());
+app.use(morgan('combined'));
+
 //config
-setupLogging(app);
 setupRateLimit(app, ROUTES);
 requestAuthCheck(app, ROUTES);
 requestMethodCheck(app, ROUTES);

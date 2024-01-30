@@ -1,0 +1,26 @@
+[2024-01-30 21:24:58] info: 	undefined
+[2024-01-30 21:26:03] info: 	undefined
+[2024-01-30 21:26:37] info: 	undefined
+[2024-01-30 21:27:02] info: 	undefined
+[2024-01-30 21:28:06] info: 	undefined
+[2024-01-30 21:28:54] info: 	undefined
+[2024-01-30 21:29:45] info: 	User haphuthinh_employee login successfully
+[2024-01-30 21:30:02] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:33:16] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:34:15] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:34:26] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:37:52] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:38:37] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:38:51] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:40:08] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:42:46] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:43:42] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:44:06] info: 	User haphuthinh_admin login successfully
+[2024-01-30 21:44:48] info: 	User haphuthinh_admin login successfully
+[2024-01-30 22:03:19] info: 	User haphuthinh_employee login successfully
+[2024-01-30 22:03:29] info: 	User haphuthinh_employee login successfully
+[2024-01-30 22:05:27] info: 	User haphuthinh_employee login successfully
+[2024-01-30 22:05:45] info: 	User haphuthinh_admin login failed - Status Code: 500
+[2024-01-30 22:06:38] error: 	User haphuthinh_admin login failed - Status Code: 500
+[2024-01-30 22:06:52] error: 	User haphuthinh_admin login failed - Status Code: 500
+[2024-01-30 22:07:04] error: 	User haphuthinh_admin login failed - Status Code: 500

@@ -1,7 +1,20 @@
+import { Login_log } from "../logging/loginLog";
 import { configReq } from "../utils/configReq"
-
+const winston = require('winston');
 const root = '/api/v1'
-
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    defaultMeta: { service: 'user-service' },
+    transports: [
+      //
+      // - Write all logs with importance level of `error` or less to `error.log`
+      // - Write all logs with importance level of `info` or less to `combined.log`
+      //
+      new winston.transports.File({ filename: 'error.log', level: 'error' }),
+      new winston.transports.File({ filename: 'combined.log' }),
+    ],
+  });
 
 export const ROUTES = [
     {
@@ -42,7 +55,7 @@ export const ROUTES = [
         },
         rateLimit: {
             windowMs: 15 * 60 * 1000,
-            max: 5
+            max: 10
         },
         proxy: {
             target: "http://localhost:3002/api/v1/schedule",
@@ -172,6 +185,8 @@ export const ROUTES = [
                 [`^${root}/login`]: '',
             },
             onProxyReq: configReq,
+            onProxyRes: new Login_log().createLog,
         }
     }
+    
 ]
