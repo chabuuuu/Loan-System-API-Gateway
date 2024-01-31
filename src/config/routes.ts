@@ -1,4 +1,10 @@
-import { Login_log } from "../logging/loginLog";
+import { Borrower_log } from "../logging/borrower.log";
+import { Contract_log } from "../logging/contract.log";
+import { Employee_log } from "../logging/employee.log";
+import { Lender_log } from "../logging/lender.log";
+import { LoanPackage_log } from "../logging/loanpackage.log";
+import { Login_log } from "../logging/login.log";
+import { Schedule_log } from "../logging/schedule.log";
 import { configReq } from "../utils/configReq"
 const winston = require('winston');
 const root = '/api/v1'
@@ -41,6 +47,7 @@ export const ROUTES = [
                 [`^${root}/borrower`]: '',
             },
             onProxyReq: configReq,
+            onProxyRes: new Borrower_log().createLog,
         }
     },
     {
@@ -64,6 +71,7 @@ export const ROUTES = [
                 [`^${root}/worker/schedule`]: '',
             },
             onProxyReq: configReq,
+            onProxyRes: new Schedule_log().createLog,
         }
     },
     {
@@ -89,6 +97,7 @@ export const ROUTES = [
                 [`^${root}/contract`]: '',
             },
             onProxyReq:  configReq,
+            onProxyRes: new Contract_log().createLog,
         }
     },
     {
@@ -113,6 +122,7 @@ export const ROUTES = [
                 [`^${root}/employees`]: '',
             },
             onProxyReq: configReq,
+            onProxyRes: new Employee_log().createLog,
         }
     },
     {
@@ -138,6 +148,7 @@ export const ROUTES = [
                 [`^${root}/loanpackage`]: '',
             },
             onProxyReq: configReq,
+            onProxyRes: new LoanPackage_log().createLog,
         }
     },
     {
@@ -163,6 +174,7 @@ export const ROUTES = [
                 [`^${root}/lender`]: '',
             },
             onProxyReq: configReq,
+            onProxyRes: new Lender_log().createLog,
         }
     },
     {

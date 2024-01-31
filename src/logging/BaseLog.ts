@@ -1,27 +1,9 @@
-// const winston = require('winston');
-// const { combine, timestamp, label, prettyPrint } = format;
-// const logger = winston.createLogger({
-//     level: 'info',
-//     format: winston.format.simple(),
-//     defaultMeta: { service: 'user-service' },
-//     transports: [
-//       //
-//       // - Write all logs with importance level of `error` or less to `error.log`
-//       // - Write all logs with importance level of `info` or less to `combined.log`
-//       //
-//       new winston.transports.File({ filename: 'error.log', level: 'error' }),
-//       new winston.transports.File({ filename: 'combined.log' }),
-//     ],
-
-
-//   });
 const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, label, prettyPrint, align, printf } = format;
 
 const logger = createLogger({
   level: process.env.LOG_LEVEL || 'info',
   format: combine(
-    label({ label: 'right meow!' }),
     timestamp({
       format: 'YYYY-MM-DD HH:mm:ss'
     }),
@@ -29,10 +11,6 @@ const logger = createLogger({
     printf((info : any) => `[${info.timestamp}] ${info.level}: ${info.message}`)  
   ),
       transports: [
-      //
-      // - Write all logs with importance level of `error` or less to `error.log`
-      // - Write all logs with importance level of `info` or less to `combined.log`
-      //
       new transports.File({ filename: 'error.log', level: 'error' }),
       new transports.File({ filename: 'combined.log' }),
     ],
@@ -40,16 +18,21 @@ const logger = createLogger({
 
 export class BaseLog {
   logData: string;
+  withResContent: boolean = false;
   constructor() {
     this.logData = "";
   }
   createLog(proxyRes: any, req: any, res: any){}
     onSuccess(proxyRes: any, req: any, res: any) {      
-      const content = this.logData;
+      let content = this.logData;
+      let withResContent = this.withResContent;
         var _write = res.write;
         res.write = function (data : any) {
           try{
-            var jsonData = JSON.parse(data);            
+            var jsonData = JSON.parse(data);     
+            if (withResContent) {
+              content += ` - Response: ${JSON.stringify(jsonData)}`;
+            }               
             logger.info(content);
               var buf = Buffer.from(JSON.stringify(jsonData), 'utf-8');
               _write.call(res,buf);
@@ -59,8 +42,35 @@ export class BaseLog {
           }
         }
     }
-    onError( ) {
-      const content = this.logData;
+    onError(proxyRes: any, req: any, res: any ) {
+      let content = this.logData;
+      let withResContent = this.withResContent;
+        var _write = res.write;
+        res.write = function (data : any) {
+          try{
+            var jsonData = JSON.parse(data);     
+            if (withResContent) {
+              content += ` - Response: ${JSON.stringify(jsonData)}`;
+            }               
             logger.error(content);
+              var buf = Buffer.from(JSON.stringify(jsonData), 'utf-8');
+              _write.call(res,buf);
+              return;
+          } catch (err) {
+            console.log(err);
+          }
+        }
+    }
+    customLog(logData: string, level: string) {
+      switch (level) {
+        case 'info':
+          logger.info(logData);
+          break;
+        case 'error':
+          logger.error(logData);
+          break;
+        default:
+          break;
+      }
     }
 }

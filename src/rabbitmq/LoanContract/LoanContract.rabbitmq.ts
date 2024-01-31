@@ -1,3 +1,7 @@
+import { log } from "winston";
+import { BaseLog } from "../../logging/BaseLog";
+import { Contract_log } from "../../logging/contract.log";
+
 const amqplib = require('amqplib');
 const amqp_url_cloud = process.env.RABBITMQ_CLOUD
 const amqp_url_docker = process.env.RABBITMQ_DOCKER
@@ -48,6 +52,9 @@ export class LoanContractRabbitMQ{
             // });        
             await contractChanel.consume(queue, (data: any) => {
                 contract = JSON.parse(data.content)
+                const logger = new BaseLog();
+                const logData = `${req.user.username} create new contract - Contract: ${JSON.stringify(contract)})}`;
+                logger.customLog(logData, 'info');
                 res.json(contract);
             }, {
                 noAck: true
