@@ -23,6 +23,7 @@ function getAuthOrNot(r : any, method: any) : boolean{
     var result = method in r.auth ? r.auth[method] : r.auth["default"];
     return result;
 }
+// claims
 
 export const requestAuthCheck = (app: any, routes: any) => {
     routes.forEach((r: any) => {

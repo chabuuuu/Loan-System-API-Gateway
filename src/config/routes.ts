@@ -7,7 +7,7 @@ import { Login_log } from "../logging/login.log";
 import { Schedule_log } from "../logging/schedule.log";
 import { configReq } from "../utils/configReq"
 const winston = require('winston');
-const root = '/api/v1'
+const root = process.env.ROOT_URL || "/api/v1";
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
@@ -79,6 +79,7 @@ export const ROUTES = [
         auth: {
             "default": true
         },
+        
         methodCheck: true,
         methodAllow: {
             "Admin": ["GET", "POST", "PUT", "DELETE"],
@@ -148,13 +149,16 @@ export const ROUTES = [
                 [`^${root}/loanpackage`]: '',
             },
             onProxyReq: configReq,
-            onProxyRes: new LoanPackage_log().createLog,
+            onProxyRes: (proxyRes: any, req: any, res: any)=> {
+                new LoanPackage_log().createLog(proxyRes, req, res)
+                console.log(res);
+            } ,
         }
     },
     {
         url: `${root}/lender`,
         auth: {
-            "GET": false,
+            "GET": true,
             "default": true
         },
         methodCheck: true,

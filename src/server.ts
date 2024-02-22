@@ -12,7 +12,10 @@ import 'dotenv/config'
 import { LoanContractRabbitMQ } from './rabbitmq/LoanContract/LoanContract.rabbitmq';
 import { rabbitmqRoute } from './config/rabbitMQ_route';
 import { createLogging } from './config/logging';
+import { route } from './routes';
+import { HTTPStatusMessage } from './utils/http-status-code';
 const loanContractRabbitMQ  = new LoanContractRabbitMQ();
+var cors = require('cors')
 const app = express();
 const port = 3000;
 app.use(
@@ -20,17 +23,31 @@ app.use(
         extended: true,
     }),
 );
+app.use(cors())
 app.use(express.json());
 app.use(helmet());
 app.use(morgan('combined'));
 
+route(app);
+app.use((error: BaseError, req: any, res: any, next: any) => {
+    error.statusCode = error.statusCode || 500;
+    error.status = error.status || 'error';
+    console.log('This error' + error);
+    res.status(error.statusCode).json({
+        statusCode: error.statusCode,
+        status: error.status,
+        message: error.message,
+        httpErrorMessage: HTTPStatusMessage[error.statusCode as unknown as keyof typeof HTTPStatusMessage].message,
+    });
+});
+
 //config
-setupRateLimit(app, ROUTES);
-requestAuthCheck(app, ROUTES);
-requestMethodCheck(app, ROUTES);
-rabbitmqRoute(app);
-setupProxies(app, ROUTES);
-setupErrorHandle(app, ROUTES)
+// setupRateLimit(app, ROUTES);
+// requestAuthCheck(app, ROUTES);
+// requestMethodCheck(app, ROUTES);
+// rabbitmqRoute(app);
+// setupProxies(app, ROUTES);
+// setupErrorHandle(app, ROUTES)
 //app.post('/api/v1/contract', loanContractRabbitMQ.createLoanContract);
 app.all('*', (req: any, res: any, next: any) => {
     const status = 'fail';

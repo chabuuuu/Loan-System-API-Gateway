@@ -6,3 +6,8 @@
 [2024-01-31 09:55:30] error: 	User haphuthinh_admin login failed - Status Code: 500 - Response: {"statusCode":500,"status":"fail","message":"Login failed"}
 [2024-01-31 10:06:45] error: 	User haphuthinh_admin login failed - Status Code: 500 - Response: {"statusCode":500,"status":"fail","message":"Login failed"}
 [2024-01-31 10:12:57] error: 	User haphuthinh_admin POST in worler/schedule failed - Status Code: 201 - Response: {"id":28,"job":"mornitor","time":"*/5 * * * * *","content":"","scheduled":true,"createdAt":"2024-01-31T03:12:57.435Z","updatedAt":"2024-01-31T03:12:57.435Z","adminId":5}
+[2024-02-19 08:55:13] error: 	User haphuthinh_admin POST failed in loan/employee - Status Code: 500
+[2024-02-19 08:55:40] error: 	User haphuthinh_admin POST failed in loan/employee - Status Code: 409
+[2024-02-19 08:55:47] error: 	User haphuthinh_admin POST failed in loan/employee - Status Code: 500
+[2024-02-19 08:58:32] error: 	User haphuthinh_admin POST in loan/borrower failed - Status Code: 500 - Response: {"statusCode":500,"status":"fail","message":"Cant create borrowers: Username already exists"}
+[2024-02-21 13:46:31] error: 	User haphuthinh_admin DELETE in worler/schedule failed - Status Code: 500 - Response: {"statusCode":500,"message":"Internal server error"}
