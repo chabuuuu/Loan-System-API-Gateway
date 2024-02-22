@@ -29,7 +29,7 @@ app.use(helmet());
 app.use(morgan('combined'));
 
 route(app);
-app.use((error: BaseError, req: any, res: any, next: any) => {
+app.use((error: any, req: any, res: any, next: any) => {
     error.statusCode = error.statusCode || 500;
     error.status = error.status || 'error';
     console.log('This error' + error);

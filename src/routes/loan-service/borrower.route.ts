@@ -1,5 +1,5 @@
 import express from 'express';
-import { BorrowerController } from '../controller/loan-service/borrower.controller';
+import { BorrowerController } from '../../controller/loan-service/borrower.controller';
 const borrowerRouter = express.Router();
 const borrowerController = new BorrowerController();
 borrowerRouter.get('/', borrowerController.get)
