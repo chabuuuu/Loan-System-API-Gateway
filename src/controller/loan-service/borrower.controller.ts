@@ -1,9 +1,11 @@
-import { BaseController } from "/home/haphuthinh/Documents/Workspace/LoanSystem/Loan-System-API-Gateway/src/controller/base.controller";
+import { BaseController } from '../base.controller';
 import axios from 'axios';
 const config = require('config');
 const LOAN_SERVICE = config.get('LOAN_SERVICE');
 export class BorrowerController extends BaseController {
-    
+    // constructor() {
+    //     super(`${LOAN_SERVICE}/borrower`);
+    // }
     async getById(req: any, res: any, next: any): Promise<void> {
         try {
             const borrower = await axios.get(`${LOAN_SERVICE}/borrower/${req.params.id}`);
@@ -25,7 +27,7 @@ export class BorrowerController extends BaseController {
                 next(error.response.data);
             }
             next(error)
-        }
+        }                
     }
 
     async create(req: any, res: any, next: any): Promise<void> {

@@ -1,7 +1,8 @@
 import express from 'express';
 import { BorrowerController } from '../controller/loan-service/borrower.controller';
 const borrowerRouter = express.Router();
-borrowerRouter.get('/', BorrowerController.prototype.get)
-borrowerRouter.post('/', BorrowerController.prototype.create)
-borrowerRouter.get('/:id', BorrowerController.prototype.getById)
+const borrowerController = new BorrowerController();
+borrowerRouter.get('/', borrowerController.get)
+borrowerRouter.post('/', borrowerController.create)
+borrowerRouter.get('/:id', borrowerController.getById)
 export default borrowerRouter;

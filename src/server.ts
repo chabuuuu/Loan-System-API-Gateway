@@ -45,7 +45,7 @@ app.use((error: BaseError, req: any, res: any, next: any) => {
 // setupRateLimit(app, ROUTES);
 // requestAuthCheck(app, ROUTES);
 // requestMethodCheck(app, ROUTES);
-// rabbitmqRoute(app);
+rabbitmqRoute(app);
 // setupProxies(app, ROUTES);
 // setupErrorHandle(app, ROUTES)
 //app.post('/api/v1/contract', loanContractRabbitMQ.createLoanContract);
