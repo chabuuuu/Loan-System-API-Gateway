@@ -40,15 +40,6 @@ export const ROUTES = [
             windowMs: 15 * 60 * 1000,
             max: 5
         },
-        proxy: {
-            target: "http://localhost:3001/api/v1/borrower",
-            changeOrigin: true,
-            pathRewrite: {
-                [`^${root}/borrower`]: '',
-            },
-            onProxyReq: configReq,
-            onProxyRes: new Borrower_log().createLog,
-        }
     },
     {
         url: `${root}/worker/schedule`,
@@ -64,15 +55,6 @@ export const ROUTES = [
             windowMs: 15 * 60 * 1000,
             max: 10
         },
-        proxy: {
-            target: "http://localhost:3002/api/v1/schedule",
-            changeOrigin: true,
-            pathRewrite: {
-                [`^${root}/worker/schedule`]: '',
-            },
-            onProxyReq: configReq,
-            onProxyRes: new Schedule_log().createLog,
-        }
     },
     {
         url: `${root}/contract`,
@@ -90,16 +72,6 @@ export const ROUTES = [
             windowMs: 15 * 60 * 1000,
             max: 5
         },
-        //proxy: false
-        proxy: {
-            target: "http://localhost:3001/api/v1/contract",
-            changeOrigin: true,
-            pathRewrite: {
-                [`^${root}/contract`]: '',
-            },
-            onProxyReq:  configReq,
-            onProxyRes: new Contract_log().createLog,
-        }
     },
     {
         url: `${root}/employees`,
@@ -116,15 +88,6 @@ export const ROUTES = [
             windowMs: 15 * 60 * 1000,
             max: 5
         },
-        proxy: {
-            target: "http://localhost:3001/api/v1/employees",
-            changeOrigin: true,
-            pathRewrite: {
-                [`^${root}/employees`]: '',
-            },
-            onProxyReq: configReq,
-            onProxyRes: new Employee_log().createLog,
-        }
     },
     {
         url: `${root}/loanpackage`,
@@ -142,18 +105,6 @@ export const ROUTES = [
             windowMs: 15 * 60 * 1000,
             max: 5
         },
-        proxy: {
-            target: "http://localhost:3001/api/v1/loanpackage",
-            changeOrigin: true,
-            pathRewrite: {
-                [`^${root}/loanpackage`]: '',
-            },
-            onProxyReq: configReq,
-            onProxyRes: (proxyRes: any, req: any, res: any)=> {
-                new LoanPackage_log().createLog(proxyRes, req, res)
-                console.log(res);
-            } ,
-        }
     },
     {
         url: `${root}/lender`,
@@ -171,15 +122,6 @@ export const ROUTES = [
             windowMs: 15 * 60 * 1000,
             max: 5
         },
-        proxy: {
-            target: "http://localhost:3001/api/v1/lender",
-            changeOrigin: true,
-            pathRewrite: {
-                [`^${root}/lender`]: '',
-            },
-            onProxyReq: configReq,
-            onProxyRes: new Lender_log().createLog,
-        }
     },
     {
         url: `${root}/login`,
@@ -194,15 +136,6 @@ export const ROUTES = [
             windowMs: 15 * 60 * 1000,
             max: 5
         },
-        proxy: {
-            target: "http://localhost:3001/api/v1/authenticaion/login",
-            changeOrigin: false,
-            pathRewrite: {
-                [`^${root}/login`]: '',
-            },
-            onProxyReq: configReq,
-            onProxyRes: new Login_log().createLog,
-        }
     }
     
 ]
