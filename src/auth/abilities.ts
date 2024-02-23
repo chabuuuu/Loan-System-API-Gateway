@@ -110,6 +110,5 @@ const roles = {
             can : []
         },
     }
-    
 }
 export default roles

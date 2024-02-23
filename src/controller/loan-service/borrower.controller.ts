@@ -3,9 +3,9 @@ import axios from 'axios';
 const config = require('config');
 const LOAN_SERVICE = config.get('LOAN_SERVICE');
 export class BorrowerController extends BaseController {
-    // constructor() {
-    //     super(`${LOAN_SERVICE}/borrower`);
-    // }
+    constructor() {
+        super(`${LOAN_SERVICE}/borrower`);
+    }
     async getById(req: any, res: any, next: any): Promise<void> {
         try {
             const borrower = await axios.get(`${LOAN_SERVICE}/borrower/${req.params.id}`);
@@ -19,15 +19,16 @@ export class BorrowerController extends BaseController {
     }
 
     async get(req: any, res: any, next: any): Promise<void> {
-        try {            
-            const allBorrwers = await axios.get(`${LOAN_SERVICE}/borrower`);
-            return res.json(allBorrwers.data);
-        } catch (error : any) {
-            if (error.hasOwnProperty('response')) {
-                next(error.response.data);
-            }
-            next(error)
-        }                
+        // try {            
+        //     const allBorrwers = await axios.get(`${LOAN_SERVICE}/borrower`);
+        //     return res.json(allBorrwers.data);
+        // } catch (error : any) {
+        //     if (error.hasOwnProperty('response')) {
+        //         next(error.response.data);
+        //     }
+        //     next(error)
+        // }  
+        return super.get(req, res, next);              
     }
 
     async create(req: any, res: any, next: any): Promise<void> {
