@@ -3,25 +3,28 @@ import BaseError from "./baseError";
 const jwt = require('jsonwebtoken');
 
 // Middleware kiểm tra JWT
-export function authenticateJWT(req: any, res: any, next: any) {
-    const token = req.header('Authorization');
+export function extractJWT(req: any, res: any, next: any) {
+    let token = req.header('Authorization');
     console.log(token);
     try {
         if (!token) {
-            throw new BaseError(401, 'fail', 'No JWT');
-            // return res.status(401).json({ message: 'Không có JWT' });
-        }
-
-        jwt.verify(token, process.env.JWT_SECRET, (err: any, user: any) => {
-            if (err) {
-                console.log(err);
-
-                throw new BaseError(403, 'failed', err.message);
-                // return res.status(403).json({ message: 'JWT không hợp lệ' });
-            }
-            req.user = user;
+            req.user = {
+                role: 'other'
+            }  
             next();
-        });
+        }else{
+            token = token.split(' ')[1];
+            jwt.verify(token, process.env.JWT_SECRET, (err: any, user: any) => {
+                if (err) {                
+                    req.user = {
+                        role: 'other'
+                    }             
+                }else{
+                    req.user = user;
+                }
+                next();
+            });
+        }
     } catch (error: any) {
         next(error);
     }

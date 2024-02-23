@@ -1,13 +1,12 @@
-export const requestMethodCheck = (app: any, routes: any) => {
-    routes.forEach((r: any) => {
-        if (r.methodCheck) {
-            app.use(r.url, async function(req: any, res: any, next: any) {
+export const requestMethodCheck = (app: any, config: any) => {
+        if (config.methodCheck) {
+            app.use(config.url, async function(req: any, res: any, next: any) {
                 try {
-                    var allowMethod;                    
-                    if (req.user.role in r.methodAllow) {
-                        allowMethod = r.methodAllow[req.user.role];
+                    var allowMethod;               
+                    if (req.user.role in config.methodAllow) {
+                        allowMethod = config.methodAllow[req.user.role];
                     }else{
-                        allowMethod = r.methodAllow["other"];
+                        allowMethod = config.methodAllow["other"];
                     }
                     if (!allowMethod.includes(req.method)){
                         throw new Error(`Method ${req.method} not allowed`);
@@ -20,5 +19,4 @@ export const requestMethodCheck = (app: any, routes: any) => {
                 }
             });
         }
-    })
 }

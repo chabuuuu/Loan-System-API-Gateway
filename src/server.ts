@@ -1,19 +1,15 @@
 import express from 'express';
-import { ROUTES } from './config/routes';
-import { setupProxies } from './config/proxy';
-import { setupRateLimit } from './config/ratelimit';
-import helmet from "helmet";
-import { requestAuthCheck } from './config/requestAuth';
 import { requestMethodCheck } from './config/requestMethod';
 import BaseError from './utils/baseError';
-import { setupErrorHandle } from './config/errorHandle';
 const morgan = require("morgan");
 import 'dotenv/config'
 import { LoanContractRabbitMQ } from './rabbitmq/LoanContract/LoanContract.rabbitmq';
-import { rabbitmqRoute } from './config/rabbitMQ_route';
-import { createLogging } from './config/logging';
 import { route } from './routes';
 import { HTTPStatusMessage } from './utils/http-status-code';
+import helmet from 'helmet';
+import { setupRateLimit } from '@/config/ratelimit';
+import { GATEWAY_CONFIG } from '@/config/routes';
+import { extractJWT } from '@/utils/jwt';
 const loanContractRabbitMQ  = new LoanContractRabbitMQ();
 var cors = require('cors')
 const app = express();
@@ -27,6 +23,11 @@ app.use(cors())
 app.use(express.json());
 app.use(helmet());
 app.use(morgan('combined'));
+app.use(extractJWT)
+GATEWAY_CONFIG.forEach((config: any) => {
+    setupRateLimit(app, config);
+    requestMethodCheck(app, config);
+})
 
 route(app);
 app.use((error: any, req: any, res: any, next: any) => {
@@ -42,10 +43,8 @@ app.use((error: any, req: any, res: any, next: any) => {
 });
 
 //config
-// setupRateLimit(app, ROUTES);
-// requestAuthCheck(app, ROUTES);
-// requestMethodCheck(app, ROUTES);
-rabbitmqRoute(app);
+
+//rabbitmqRoute(app);
 // setupProxies(app, ROUTES);
 // setupErrorHandle(app, ROUTES)
 //app.post('/api/v1/contract', loanContractRabbitMQ.createLoanContract);

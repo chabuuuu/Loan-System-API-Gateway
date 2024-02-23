@@ -22,13 +22,9 @@ const logger = winston.createLogger({
     ],
   });
 
-export const ROUTES = [
+export const GATEWAY_CONFIG = [
     {
         url: `${root}/borrower`,
-        auth: {
-            //"POST": false,
-            "default": true
-        },
         methodCheck: true,
         methodAllow: {
             "Admin": ["GET", "POST", "PUT", "DELETE"],
@@ -43,9 +39,6 @@ export const ROUTES = [
     },
     {
         url: `${root}/worker/schedule`,
-        auth: {
-            "default": true
-        },
         methodCheck: true,
         methodAllow: {
             "Admin": ["GET", "POST", "PUT", "DELETE"],
@@ -58,10 +51,6 @@ export const ROUTES = [
     },
     {
         url: `${root}/contract`,
-        auth: {
-            "default": true
-        },
-        
         methodCheck: true,
         methodAllow: {
             "Admin": ["GET", "POST", "PUT", "DELETE"],
@@ -75,9 +64,6 @@ export const ROUTES = [
     },
     {
         url: `${root}/employees`,
-        auth: {
-            "default": true
-        },
         methodCheck: true,
         methodAllow: {
             "Admin": ["GET", "POST", "PUT", "DELETE"],
@@ -91,10 +77,6 @@ export const ROUTES = [
     },
     {
         url: `${root}/loanpackage`,
-        auth: {
-            "GET": false,
-            "default": true
-        },
         methodCheck: true,
         methodAllow: {
             "Admin": ["GET", "POST", "PUT", "DELETE"],
@@ -108,10 +90,6 @@ export const ROUTES = [
     },
     {
         url: `${root}/lender`,
-        auth: {
-            "GET": true,
-            "default": true
-        },
         methodCheck: true,
         methodAllow: {
             "Admin": ["GET", "POST", "PUT", "DELETE"],
@@ -125,9 +103,6 @@ export const ROUTES = [
     },
     {
         url: `${root}/login`,
-        auth: {
-            "default": false
-        },
         methodCheck: true,
         methodAllow: {
             "other": ["POST"],
