@@ -1,3 +1,4 @@
+import authenticateRouter from "@/routes/loan-service/authenticate.route";
 import borrowerRouter from "./loan-service/borrower.route";
 import contractRouter from "./loan-service/contract.route";
 import employeeRouter from "./loan-service/employee.route";
@@ -12,4 +13,5 @@ export function route(app: any){
     app.use(`${root}/lender`, lenderRouter)
     app.use(`${root}/loanpackage`, loanPackageRouter)
     app.use(`${root}/worker/schedule`, scheduleRouter)
+    app.use(`${root}/login`, authenticateRouter)
 }

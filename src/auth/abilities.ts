@@ -1,6 +1,5 @@
-import { Subject } from "./subject"
-
-const role = {
+import { Subject } from "/home/haphuthinh/Documents/Workspace/LoanSystem/Loan-System-API-Gateway/src/auth/subject"
+const roles = {
     Admin: {
         [Subject.Borrower]: {
             can : [
@@ -113,4 +112,4 @@ const role = {
     }
     
 }
-export default role
+export default roles

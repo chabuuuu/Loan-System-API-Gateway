@@ -10,7 +10,12 @@
     "strict": true,
     "esModuleInterop":true,
     "outDir"    : "js",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
+
   "include": [
     "src/**/*.ts"
 ],

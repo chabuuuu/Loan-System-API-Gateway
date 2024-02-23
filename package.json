@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec npx ts-node ./src/server.ts",
+    "dev": "nodemon --exec npx ts-node -r tsconfig-paths/register ./src/server.ts",
     "debug": "nodemon --inspect --exec npx ts-node ./src/server.ts"
   },
   "keywords": [],
@@ -32,6 +32,7 @@
     "winston": "^3.11.0"
   },
   "devDependencies": {
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.3.3"
   }
 }
