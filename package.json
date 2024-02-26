@@ -26,13 +26,17 @@
     "helmet": "^7.1.0",
     "http-proxy-middleware": "^2.0.6",
     "i": "^0.3.7",
+    "ioredis": "^5.3.2",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.3",
     "npm": "^10.4.0",
+    "redis": "^4.6.13",
     "winston": "^3.11.0"
   },
   "devDependencies": {
+    "@types/ioredis": "^5.0.0",
+    "@types/redis": "^4.0.11",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.3.3"
   }

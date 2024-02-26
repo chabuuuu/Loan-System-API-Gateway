@@ -45,3 +45,7 @@
 ,An instance of GetAllDto has failed the validation:
  - property data has failed the following constraints: isArray, isNotEmpty 
 
+[2024-02-26 16:54:26] error: 	Service http://localhost:3001/api/v1/authenticaion Not Available
+[2024-02-26 16:54:46] error: 	Login failed
+[2024-02-26 16:56:32] error: 	Login failed
+[2024-02-26 16:57:47] error: 	Login failed
