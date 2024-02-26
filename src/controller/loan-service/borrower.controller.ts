@@ -7,40 +7,15 @@ export class BorrowerController extends BaseController {
         super(`${LOAN_SERVICE}/borrower`);
     }
     async getById(req: any, res: any, next: any): Promise<void> {
-        try {
-            const borrower = await axios.get(`${LOAN_SERVICE}/borrower/${req.params.id}`);
-            return res.json(borrower.data);
-        } catch (error : any) {
-            if (error.hasOwnProperty('response')) {
-                next(error.response.data);
-            }
-            next(error)
-        }
+        return super.getById(req, res, next);
     }
 
     async get(req: any, res: any, next: any): Promise<void> {
-        // try {            
-        //     const allBorrwers = await axios.get(`${LOAN_SERVICE}/borrower`);
-        //     return res.json(allBorrwers.data);
-        // } catch (error : any) {
-        //     if (error.hasOwnProperty('response')) {
-        //         next(error.response.data);
-        //     }
-        //     next(error)
-        // }  
         return super.get(req, res, next);              
     }
 
     async create(req: any, res: any, next: any): Promise<void> {
-        try {
-            const borrower = await axios.post(`${LOAN_SERVICE}/borrower`, req.body);
-            return res.json(borrower.data);
-        } catch (error : any) {
-            if (error.hasOwnProperty('response')) {
-                next(error.response.data);
-            }
-            next(error)
-        }
+        return super.create(req, res, next);
     }
 
 }

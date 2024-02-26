@@ -11,6 +11,8 @@ import { setupRateLimit } from '@/config/ratelimit';
 import { GATEWAY_CONFIG } from '@/config/routes';
 import { extractJWT } from '@/utils/jwt';
 const loanContractRabbitMQ  = new LoanContractRabbitMQ();
+import { BaseLog } from '@/logging/BaseLog';
+const logger = new BaseLog();
 var cors = require('cors')
 const app = express();
 const port = 3000;
@@ -34,6 +36,7 @@ app.use((error: any, req: any, res: any, next: any) => {
     error.statusCode = error.statusCode || 500;
     error.status = error.status || 'error';
     console.log('This error' + error);
+    logger.customLog(error.message, 'error');
     res.status(error.statusCode).json({
         statusCode: error.statusCode,
         status: error.status,

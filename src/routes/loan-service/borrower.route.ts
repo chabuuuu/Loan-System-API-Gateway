@@ -8,6 +8,6 @@ const borrowerRouter = express.Router();
 const borrowerController = new BorrowerController();
 
 borrowerRouter.get('/', jwtAuthenticate ,checkRole('read', Subject.Borrower), borrowerController.get.bind(borrowerController))
-borrowerRouter.post('/', jwtAuthenticate, checkRole('write', Subject.Borrower) ,borrowerController.create)
-borrowerRouter.get('/:id', jwtAuthenticate, checkRole('read', Subject.Borrower), borrowerController.getById)
+borrowerRouter.post('/', jwtAuthenticate, checkRole('write', Subject.Borrower) ,borrowerController.create.bind(borrowerController))
+borrowerRouter.get('/:id', jwtAuthenticate, checkRole('read', Subject.Borrower), borrowerController.getById.bind(borrowerController))
 export default borrowerRouter;

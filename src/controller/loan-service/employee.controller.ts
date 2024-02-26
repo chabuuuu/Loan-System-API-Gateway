@@ -4,27 +4,14 @@ const config = require('config');
 const LOAN_SERVICE = config.get('LOAN_SERVICE');
 
 export class EmployeeController extends BaseController {
+    constructor() {
+        super(`${LOAN_SERVICE}/employees`);
+    }
     async get(req: any, res: any, next: any): Promise<void> {
-        try {
-            const employee = await axios.get(`${LOAN_SERVICE}/employees`);
-            return res.json(employee.data);
-        } catch (error : any) {
-            if (error.hasOwnProperty('response')) {
-                next(error.response.data);
-            }
-            next(error)   
-        }
+        return super.get(req, res, next);
     }
 
     async create(req: any, res: any, next: any): Promise<void> {
-        try {
-            const employee = await axios.post(`${LOAN_SERVICE}/employees`, req.body);
-            return res.json(employee.data);
-        } catch (error : any) {
-            if (error.hasOwnProperty('response')) {
-                next(error.response.data);
-            }
-            next(error) 
-        }
+        return super.create(req, res, next);
     }
 }

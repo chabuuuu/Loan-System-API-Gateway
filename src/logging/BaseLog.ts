@@ -73,4 +73,18 @@ export class BaseLog {
           break;
       }
     }
+
+    log (reqData : any, content : any, level : string, service : string) {
+      let logData = `User ${reqData.user.username} ${reqData.method} in ${service} - Content: ${content}`;
+      switch (level) {
+        case 'info':
+          logger.info(logData);
+          break;
+        case 'error':
+          logger.error(logData);
+          break;
+        default:
+          break;
+      }
+    }
 }

@@ -11,3 +11,8 @@
 [2024-02-19 08:55:47] error: 	User haphuthinh_admin POST failed in loan/employee - Status Code: 500
 [2024-02-19 08:58:32] error: 	User haphuthinh_admin POST in loan/borrower failed - Status Code: 500 - Response: {"statusCode":500,"status":"fail","message":"Cant create borrowers: Username already exists"}
 [2024-02-21 13:46:31] error: 	User haphuthinh_admin DELETE in worler/schedule failed - Status Code: 500 - Response: {"statusCode":500,"message":"Internal server error"}
+[2024-02-26 14:19:36] error: 	http://localhost:3001/api/v1/loanpackage Not Available
+[2024-02-26 14:20:37] error: 	
+[2024-02-26 14:20:53] error: 	
+[2024-02-26 14:21:10] error: 	Service http://localhost:3001/api/v1/authenticaion Not Available
+[2024-02-26 14:22:21] error: 	No JWT
