@@ -22,3 +22,26 @@
 [2024-02-26 15:00:21] error: 	An instance of GetAllDto has failed the validation:
  - property status has failed the following constraints: isNumber 
 
+[2024-02-26 15:02:18] error: 	Worker Service Not Available
+[2024-02-26 15:02:31] error: 	Login failed
+[2024-02-26 15:02:57] error: 	Login failed
+[2024-02-26 15:03:54] error: 	Login failed
+[2024-02-26 15:04:02] error: 	Login failed
+[2024-02-26 15:04:15] error: 	Login failed
+[2024-02-26 15:04:36] error: 	Login failed
+[2024-02-26 15:10:26] error: 	Internal server error
+[2024-02-26 15:10:41] error: 	Internal server error
+[2024-02-26 15:11:04] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-02-26 15:11:12] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+

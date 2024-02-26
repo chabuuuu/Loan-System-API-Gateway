@@ -152,3 +152,29 @@
 [2024-02-26 15:00:21] error: 	An instance of GetAllDto has failed the validation:
  - property status has failed the following constraints: isNumber 
 
+[2024-02-26 15:02:18] error: 	Worker Service Not Available
+[2024-02-26 15:02:31] error: 	Login failed
+[2024-02-26 15:02:57] error: 	Login failed
+[2024-02-26 15:03:54] error: 	Login failed
+[2024-02-26 15:04:02] error: 	Login failed
+[2024-02-26 15:04:15] error: 	Login failed
+[2024-02-26 15:04:36] error: 	Login failed
+[2024-02-26 15:05:44] info: 	haphuthinh_employee create new contract - Contract: {"error":"\nInvalid `this.prisma.loanContract.create()` invocation in\n/home/haphuthinh/Documents/Workspace/GitLab/LoanService-GitLab/nestjs.api/src/services/loancontract/loancontract.service.ts:39:44\n\n  36 let expire_date = new Date(date_now.setMonth(date_now.getMonth()+Number(loan_package.duration)));\n  37 data.expire_date = expire_date.toISOString();\n  38 \n→ 39     await this.prisma.loanContract.create(\nForeign key constraint failed on the field: `LoanContract_employeeId_fkey (index)`"})}
+[2024-02-26 15:07:05] info: 	haphuthinh_employee create new contract - Contract: {"money":"10000000","purpose":"Mua nhà","loan_method":"Thế chấp","employeeId":10,"borrowerId":2,"lenderId":1,"loanPackageId":1,"contract_status":"true","loan_date":"2024-02-26T08:07:05.702Z","expire_date":"2026-09-26T08:07:05.702Z"})}
+[2024-02-26 15:07:57] info: 	haphuthinh_employee create new contract - Contract: {"error":"\nInvalid `this.prisma.loanContract.create()` invocation in\n/home/haphuthinh/Documents/Workspace/GitLab/LoanService-GitLab/nestjs.api/src/services/loancontract/loancontract.service.ts:39:44\n\n  36 let expire_date = new Date(date_now.setMonth(date_now.getMonth()+Number(loan_package.duration)));\n  37 data.expire_date = expire_date.toISOString();\n  38 \n→ 39     await this.prisma.loanContract.create(\nForeign key constraint failed on the field: `LoanContract_employeeId_fkey (index)`"})}
+[2024-02-26 15:10:26] error: 	Internal server error
+[2024-02-26 15:10:41] error: 	Internal server error
+[2024-02-26 15:11:04] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-02-26 15:11:12] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+

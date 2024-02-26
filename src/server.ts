@@ -47,13 +47,6 @@ app.use((error: any, req: any, res: any, next: any) => {
         httpErrorMessage: HTTPStatusMessage[error.statusCode as unknown as keyof typeof HTTPStatusMessage].message,
     });
 });
-
-//config
-
-//rabbitmqRoute(app);
-// setupProxies(app, ROUTES);
-// setupErrorHandle(app, ROUTES)
-//app.post('/api/v1/contract', loanContractRabbitMQ.createLoanContract);
 app.all('*', (req: any, res: any, next: any) => {
     const status = 'fail';
     const statusCode = 404;
