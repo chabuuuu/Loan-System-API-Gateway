@@ -35,6 +35,9 @@ route(app);
 app.use((error: any, req: any, res: any, next: any) => {
     error.statusCode = error.statusCode || 500;
     error.status = error.status || 'error';
+    if (!error.message) {
+        error.message = error;
+    }
     console.log('This error' + error);
     logger.customLog(error.message, 'error');
     res.status(error.statusCode).json({

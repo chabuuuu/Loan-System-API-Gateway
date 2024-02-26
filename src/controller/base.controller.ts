@@ -1,6 +1,10 @@
 import axios from "axios";
-import { IBaseController } from "./i.base.controller";
 import { BaseLog } from "@/logging/BaseLog";
+import { validateOrReject } from "class-validator";
+import { GetAllDto } from "@/dto/getAll.dto";
+import { GetByIdDto } from "@/dto/getById.dto";
+import { UpdateByIdDto } from "@/dto/update.dto";
+import { DeleteByIdDto } from "@/dto/delete.dto";
 const logger = new BaseLog();
 export abstract class BaseController {
     public service: string;
@@ -14,9 +18,9 @@ export abstract class BaseController {
             logger.log(req, JSON.stringify(data.data), 'info', this.service)
             return res.json(data.data);
         } catch (error: any) {
-            if (error.code === "ECONNREFUSED"){
+            if (error.code === "ECONNREFUSED") {
                 error.message = `Service ${this.service} Not Available`
-            } 
+            }
             if (error.hasOwnProperty('response')) {
                 next(error.response.data);
             }
@@ -25,14 +29,22 @@ export abstract class BaseController {
     }
 
     async get(req: any, res: any, next: any) {
-        try {            
-            const data = await axios.get(`${this.service}`);            
+        try {
+            const data = await axios.get(`${this.service}`);
+
+            //Validate the response
+            let getAllDto = new GetAllDto();
+            getAllDto.data = data.data.data;
+            getAllDto.message = data.data.message;
+            getAllDto.status = data.data.status;
+            await validateOrReject(getAllDto)
+
             logger.log(req, JSON.stringify(data.data), 'info', this.service)
             return res.json(data.data);
         } catch (error: any) {
-            if (error.code === "ECONNREFUSED"){
+            if (error.code === "ECONNREFUSED") {
                 error.message = `Service ${this.service} Not Available`
-            }        
+            }
             if (error.hasOwnProperty('response')) {
                 next(error.response.data);
             }
@@ -43,12 +55,20 @@ export abstract class BaseController {
     async getById(req: any, res: any, next: any) {
         try {
             const data = await axios.get(`${this.service}/${req.params.id}`);
+
+            //Validate the response
+            let getAllDto = new GetByIdDto();
+            getAllDto.data = data.data.data;
+            getAllDto.message = data.data.message;
+            getAllDto.status = data.data.status;
+            await validateOrReject(getAllDto)
+
             logger.log(req, JSON.stringify(data.data), 'info', this.service)
             return res.json(data.data);
         } catch (error: any) {
-            if (error.code === "ECONNREFUSED"){
+            if (error.code === "ECONNREFUSED") {
                 error.message = `Service ${this.service} Not Available`
-            } 
+            }
             if (error.hasOwnProperty('response')) {
                 next(error.response.data);
             }
@@ -59,12 +79,20 @@ export abstract class BaseController {
     async update(req: any, res: any, next: any) {
         try {
             const data = await axios.put(`${this.service}/${req.params.id}`, req.body);
+
+            //Validate the response
+            let getAllDto = new UpdateByIdDto();
+            getAllDto.data = data.data.data;
+            getAllDto.message = data.data.message;
+            getAllDto.status = data.data.status;
+            await validateOrReject(getAllDto);
+
             logger.log(req, JSON.stringify(data.data), 'info', this.service)
             return res.json(data.data);
-        } catch (error : any) {
-            if (error.code === "ECONNREFUSED"){
+        } catch (error: any) {
+            if (error.code === "ECONNREFUSED") {
                 error.message = `Service ${this.service} Not Available`
-            } 
+            }
             if (error.hasOwnProperty('response')) {
                 next(error.response.data);
             }
@@ -72,15 +100,23 @@ export abstract class BaseController {
         }
     }
 
-    async delete(req: any, res: any, next: any) { 
+    async delete(req: any, res: any, next: any) {
         try {
             const data = await axios.delete(`${this.service}/${req.params.id}`);
+
+            //Validate the response
+            let getAllDto = new DeleteByIdDto();
+            getAllDto.data = data.data.data;
+            getAllDto.message = data.data.message;
+            getAllDto.status = data.data.status;
+            await validateOrReject(getAllDto)
+
             logger.log(req, JSON.stringify(data.data), 'info', this.service)
             return res.json(data.data);
-        } catch (error : any) {
-            if (error.code === "ECONNREFUSED"){
+        } catch (error: any) {
+            if (error.code === "ECONNREFUSED") {
                 error.message = `Service ${this.service} Not Available`
-            } 
+            }
             if (error.hasOwnProperty('response')) {
                 next(error.response.data);
             }

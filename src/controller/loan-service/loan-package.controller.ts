@@ -8,7 +8,8 @@ export class LoanPackageController extends BaseController {
         super(`${LOAN_SERVICE}/loanpackage`);
     }
     async get(req: any, res: any, next: any): Promise<void> {        
-        return super.get(req, res, next);
+        const respond = await super.get(req, res, next);
+        return respond;
     }
 
     async create(req: any, res: any, next: any): Promise<void> {

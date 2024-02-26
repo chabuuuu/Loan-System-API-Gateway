@@ -16,3 +16,9 @@
 [2024-02-26 14:20:53] error: 	
 [2024-02-26 14:21:10] error: 	Service http://localhost:3001/api/v1/authenticaion Not Available
 [2024-02-26 14:22:21] error: 	No JWT
+[2024-02-26 14:47:14] error: 	undefined
+[2024-02-26 14:48:24] error: 	undefined
+[2024-02-26 14:49:15] error: 	undefined
+[2024-02-26 15:00:21] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isNumber 
+
