@@ -3,16 +3,14 @@ import roles from "/home/haphuthinh/Documents/Workspace/LoanSystem/Loan-System-A
 
 interface Roles {
     [key: string]: {
-        [key: string]: {
-            can: string[];
-        };
+        [key: string]: string[];
     };
 }
 
 export const checkRole = (action: any, subject: any) => (req: any, res: any, next: any) => {
     try {        
         const userRole: string = req.user.role || 'Anonymous';
-        if ((roles as Roles)[userRole][subject].can.includes(action) || (roles as Roles)[userRole][subject].can.includes('manage')) {
+        if ((roles as unknown as Roles)[userRole][subject].includes(action) || (roles as unknown as Roles)[userRole][subject].includes('1')) {
             next();
         } else {
             throw new BaseError(403, 'Forbidden', 'You do not have permission to access this resource')

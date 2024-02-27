@@ -47,7 +47,7 @@ export const checkRetry = (maxRetry: number) => async (req: any, res: any, next:
                 const email = await accountService.getUserEmail(username);
                 const root = process.cwd();
                 ejs.renderFile(root + '/src/views//email/user-blocked.ejs',
-                    { receiver: email, content: `Tài khoản của bạn đã bị khóa do đăng nhập quá ${maxRetry} lần` },
+                    { receiver: email, content: `Tài khoản của bạn đã bị khóa do đăng nhập sai quá ${maxRetry} lần` },
                     async (err: any, data: any) => {
                         if (err) {
                             throw err
