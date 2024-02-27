@@ -10,28 +10,34 @@ export class CountRetryService {
     constructor(expTime: number) {
         this.expTime = expTime;
     }
-    async getRetryCountByUserId(userId: number) {
-        let count : any = await redis.get(`user:${userId.toString}`);
+    async getRetryCountByUsername(username: string) {
+        let count : any = await redis.get(`user:${username}`);
         if (count === null) {
             count = '0';
         }
         return Number(count);
     }
 
-    async setRetryCountByUserId(userId: number, count: number) {
-        await redis.set(`user:${userId.toString()}`, count, 'EX', this.expTime);
+    async setRetryCountByUsername(username: string, count: number) {
+        await redis.set(`user:${username}`, count, 'EX', this.expTime);
     }
 
-    async updateRetryCountByUserId(key: string, value: string): Promise<void> {
-        await redis.set(`user:${key}`, value);
+    async updateRetryCountByUsername(username: string, value: string): Promise<void> {
+        await redis.set(`user:${username}`, value, 'EX', this.expTime);
       }
-    async incrementRetryCount(userId: number) {
-        let count : any = await this.getRetryCountByUserId(userId);
+    async incrementRetryCount(username: string) {
+        let count : any = await this.getRetryCountByUsername(username);
+        console.log('count:::',count);
+        
+        if (!count || count === 0) {
+            this.setRetryCountByUsername(username, 0);
+            count = 0;
+        }
         count = Number(count) + 1;
-        await this.updateRetryCountByUserId(userId.toString(), count.toString());
+        await this.updateRetryCountByUsername(username, count.toString());
     }
 
-    async resetRetryCount(userId: number) {
-        await this.updateRetryCountByUserId(userId.toString(), '0');
+    async resetRetryCount(username: string) {
+        await this.updateRetryCountByUsername(username, '0');
     }
 }

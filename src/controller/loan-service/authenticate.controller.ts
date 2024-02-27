@@ -19,7 +19,11 @@ export class AuthenticateController extends BaseController {
             console.log('errorcode:::',error.response.status);
             if (error.response.status === 401){
                 const user = req.body;
-                await countRetryService.incrementRetryCount(user.id);
+                console.log('user:::',user)
+                if (user.username) {                    
+                    await countRetryService.incrementRetryCount(user.username);
+                }
+                error.message = 'Invalid Username or Password';
             }
             if (error.code === "ECONNREFUSED"){
                 error.message = `Service ${this.service} Not Available`
