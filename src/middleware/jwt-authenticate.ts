@@ -24,6 +24,9 @@ export const jwtAuthenticate = async (req: any, res: any, next: any) => {
                       const token = req.get('Authorization')
                       const user : any = await getUser(token);
                       delete user.status;
+                      if (user.isBlock){
+                        throw new BaseError(401, "fail", "This account is currently blocked")
+                      }
                       req.user = user;
                       next();
                     }

@@ -78,3 +78,32 @@
 [2024-02-27 11:18:36] error: 	You have reached the maximum number of retries
 [2024-02-27 11:19:12] error: 	You have reached the maximum number of retries
 [2024-02-27 11:19:42] error: 	You have reached the maximum number of retries
+[2024-02-27 13:27:14] error: 	This account is blocked
+[2024-02-27 13:29:21] error: 	This account currently is blocked
+[2024-02-27 13:34:49] error: 	Auth Service Not Available
+[2024-02-27 13:35:00] error: 	Cannot read properties of undefined (reading 'data')
+[2024-02-27 13:35:15] error: 	Cannot read properties of undefined (reading 'data')
+[2024-02-27 13:36:41] error: 	Cannot read properties of undefined (reading 'data')
+[2024-02-27 13:39:35] error: 	No JWT
+[2024-02-27 13:40:41] error: 	This account is currently blocked
+[2024-02-27 13:41:34] error: 	This account is currently blocked
+[2024-02-27 13:42:38] error: 	This account is currently blocked
+[2024-02-27 13:43:30] error: 	This account is currently blocked
+[2024-02-27 13:43:30] error: 	This account is currently blocked
+[2024-02-27 13:43:31] error: 	This account is currently blocked
+[2024-02-27 13:54:33] error: 	Can not find this page
+[2024-02-27 13:54:38] error: 	Can not find this page
+[2024-02-27 13:55:20] error: 	Does not have username
+[2024-02-27 13:56:03] error: 	Does not have username
+[2024-02-27 13:57:00] error: 	Does not have username
+[2024-02-27 13:58:50] error: 	Cannot read properties of undefined (reading 'data')
+[2024-02-27 13:58:50] error: 	Cannot read properties of undefined (reading 'data')
+[2024-02-27 13:59:23] error: 	Cannot read properties of undefined (reading 'data')
+[2024-02-27 14:01:12] error: 	Loan Service Not Available
+[2024-02-27 14:01:22] error: 	This account is currently blocked
+[2024-02-27 14:01:39] error: 	This account is currently blocked
+[2024-02-27 14:03:07] error: 	This account is currently blocked
+[2024-02-27 14:33:10] error: 	Login failed
+[2024-02-27 14:36:31] error: 	This account is currently blocked
+[2024-02-27 14:42:23] error: 	You have reached the maximum number of retries
+[2024-02-27 14:43:35] error: 	You have reached the maximum number of retries

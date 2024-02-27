@@ -9,8 +9,6 @@ export class AuthenticateController extends BaseController {
     constructor() {
         super(`${LOAN_SERVICE}/authenticaion`);
     }
-
-
     async login(req: any, res: any, next: any) {
         try {
             const token = await axios.post(`${LOAN_SERVICE}/authenticaion/login`, req.body)
