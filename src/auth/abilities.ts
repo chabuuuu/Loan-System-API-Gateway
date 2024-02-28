@@ -1,12 +1,3 @@
-import { Subject } from "/home/haphuthinh/Documents/Workspace/LoanSystem/Loan-System-API-Gateway/src/auth/subject"
-//Permission alias: 
-/*
-+ 1: manage
-+ 2: read
-+ 3: write
-+ 4: delete
-+ 5: update
-*/
 //Subject alias:
 /*
 + 1: Borrower
@@ -16,10 +7,22 @@ import { Subject } from "/home/haphuthinh/Documents/Workspace/LoanSystem/Loan-Sy
 + 5: LoanPackage
 + 6: Schedule
 */
+//Permission alias: 
+/*
++ 1: manage
++ 2: read
++ 3: write
++ 4: delete
++ 5: update
+*/
+/*
+Role object format:
+{[Role]: {[Subject]: [Permission]}}
+*/
 const Admin = {"1": [1], "2": [1], "3": [1], "4": [1], "5": [1], "6": [1]}
 const Employee = {"1": [1], "2": [2], "3": [1], "4": [1], "5": [1], "6": [2]}
-const Lender = {"1": [], "2": [], "3": [], "4": [1], "5": [2], "6": []}
-const Borrower = {"1": [2], "2": [], "3": [], "4": [], "5": [2], "6": []}
+const Lender = {"1": [2], "2": [], "3": [], "4": [], "5": [2], "6": []}
+const Borrower = {"1": [], "2": [], "3": [], "4": [2], "5": [2], "6": []}
 const roles = {Admin, Employee, Lender, Borrower}
 // const roles = {
 
