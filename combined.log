@@ -254,3 +254,22 @@
 [2024-02-28 09:27:17] info: 	User haphuthinh_admin GET in http://localhost:3001/api/v1/borrower - Content: {"status":"success","message":"Done read all lender","data":[{"id":1,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":2},{"id":2,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":18},{"id":3,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":21}]}
 [2024-02-28 09:28:01] info: 	User haphuthinh_employee GET in http://localhost:3001/api/v1/borrower - Content: {"status":"success","message":"Done read all lender","data":[{"id":1,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":2},{"id":2,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":18},{"id":3,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":21}]}
 [2024-02-28 09:28:31] error: 	You do not have permission to access this resource
+[2024-02-28 13:46:07] error: 	Login failed
+[2024-02-28 13:46:09] error: 	Login failed
+[2024-02-28 13:46:09] error: 	Login failed
+[2024-02-28 13:46:10] error: 	Login failed
+[2024-02-28 13:46:11] error: 	Login failed
+[2024-02-28 13:46:36] error: 	You have reached the maximum number of retries
+[2024-02-28 13:54:18] error: 	You have reached the maximum number of retries
+[2024-02-28 13:55:45] error: 	This account is currently blocked
+[2024-02-28 13:56:04] error: 	You have reached the maximum number of retries
+[2024-02-28 14:06:58] error: 	You have reached the maximum number of retries
+[2024-02-28 14:07:52] error: 	You have reached the maximum number of retries
+[2024-02-28 14:38:59] error: 	Auth Service Not Available
+[2024-02-28 14:41:05] error: 	Auth Service Not Available
+[2024-02-28 14:43:28] error: 	Auth Service Not Available
+[2024-02-28 14:43:52] error: 	Auth Service Not Available
+[2024-02-28 14:53:51] error: 	Auth Service Not Available
+[2024-02-28 14:54:07] info: 	User haphuthinh_admin GET in http://localhost:3001/api/v1/borrower - Content: {"status":"success","message":"Done read all lender","data":[{"id":1,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":2},{"id":2,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":18},{"id":3,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":21}]}
+[2024-02-28 14:54:44] info: 	User haphuthinh_admin GET in http://localhost:3001/api/v1/borrower - Content: {"status":"success","message":"Done read all lender","data":[{"id":1,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":2},{"id":2,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":18},{"id":3,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":21}]}
+[2024-02-28 14:54:49] info: 	User haphuthinh_admin GET in http://localhost:3001/api/v1/borrower - Content: {"status":"success","message":"Done read all lender","data":[{"id":1,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":2},{"id":2,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":18},{"id":3,"full_name":"Hà Phú Thịnh","job_title":"IT","address":"UIT","phone_number":"039123123","income":"12000000","outcome":"10000000","CCCD":"65434234442","accountId":21}]}
