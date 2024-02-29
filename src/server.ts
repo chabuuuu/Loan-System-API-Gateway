@@ -9,9 +9,9 @@ import { HTTPStatusMessage } from './utils/http-status-code';
 import helmet from 'helmet';
 import { setupRateLimit } from '@/config/ratelimit';
 import { GATEWAY_CONFIG } from '@/config/routes';
-import { extractJWT } from '@/utils/jwt';
 const loanContractRabbitMQ  = new LoanContractRabbitMQ();
 import { BaseLog } from '@/logging/BaseLog';
+import { extractJWT } from '@/utils/jwt/jwt-extractor';
 const logger = new BaseLog();
 var cors = require('cors')
 const app = express();

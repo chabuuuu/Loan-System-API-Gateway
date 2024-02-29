@@ -133,3 +133,131 @@
 [2024-02-28 14:43:28] error: 	Auth Service Not Available
 [2024-02-28 14:43:52] error: 	Auth Service Not Available
 [2024-02-28 14:53:51] error: 	Auth Service Not Available
+[2024-02-29 14:05:33] error: 	This account is currently blocked
+[2024-02-29 14:07:31] error: 	Cannot read properties of undefined (reading 'level')
+[2024-02-29 14:09:45] error: 	Cannot read properties of undefined (reading 'level')
+[2024-02-29 14:11:50] error: 	abilities_1.default[userRole].hasownproperty is not a function
+[2024-02-29 14:12:44] error: 	You do not have permission to access this resource
+[2024-02-29 14:12:59] error: 	You do not have permission to access this resource
+[2024-02-29 14:13:15] error: 	You do not have permission to access this resource
+[2024-02-29 14:14:14] error: 	You do not have permission to access this resource
+[2024-02-29 14:14:39] error: 	You do not have permission to access this resource
+[2024-02-29 14:16:16] error: 	Cannot read properties of undefined (reading 'includes')
+[2024-02-29 14:17:22] error: 	Cannot read properties of undefined (reading 'level')
+[2024-02-29 14:20:20] error: 	You do not have permission to access this resource
+[2024-02-29 14:22:15] error: 	[object Promise]
+[2024-02-29 14:22:56] error: 	You do not have permission to access this resource
+[2024-02-29 14:23:01] error: 	[object Promise]
+[2024-02-29 14:24:50] error: 	[object Promise]
+[2024-02-29 14:26:39] error: 	[object Promise]
+[2024-02-29 14:27:58] error: 	[object Promise]
+[2024-02-29 14:28:21] error: 	[object Promise]
+[2024-02-29 14:28:57] error: 	[object Promise]
+[2024-02-29 14:30:07] error: 	[object Promise]
+[2024-02-29 14:31:02] error: 	No JWT
+[2024-02-29 14:34:09] error: 	You do not have permission to access this resource
+[2024-02-29 14:34:46] error: 	You do not have permission to access this resource
+[2024-02-29 14:34:47] error: 	You do not have permission to access this resource
+[2024-02-29 14:34:47] error: 	You do not have permission to access this resource
+[2024-02-29 14:34:48] error: 	You do not have permission to access this resource
+[2024-02-29 14:34:48] error: 	You do not have permission to access this resource
+[2024-02-29 14:35:00] error: 	You do not have permission to access this resource
+[2024-02-29 14:45:34] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+
+[2024-02-29 14:56:04] error: 	An instance of GetAllEmployeeDto has failed the validation:
+ - property page has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property perPage has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property totalCount has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property from has failed the following constraints: isString, isNotEmpty 
+
+[2024-02-29 15:42:03] error: 	An instance of GetAllEmployeeDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property page has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property perPage has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property totalCount has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property from has failed the following constraints: isString, isNotEmpty 
+
+[2024-02-29 15:42:06] error: 	An instance of GetAllEmployeeDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property page has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property perPage has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property totalCount has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property from has failed the following constraints: isString, isNotEmpty 
+
+[2024-02-29 15:42:30] error: 	An instance of GetAllEmployeeDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property page has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property perPage has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property totalCount has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property from has failed the following constraints: isString, isNotEmpty 
+
+[2024-02-29 15:43:02] error: 	An instance of GetAllEmployeeDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property page has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property perPage has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property totalCount has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property from has failed the following constraints: isString, isNotEmpty 
+
+[2024-02-29 15:49:21] error: 	An instance of GetAllEmployeeDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property page has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property perPage has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property totalCount has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property from has failed the following constraints: isString, isNotEmpty 
+
+[2024-02-29 15:49:51] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-02-29 15:52:23] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+
+[2024-02-29 15:53:02] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+
+[2024-02-29 15:53:22] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+
+[2024-02-29 16:49:01] error: 	Request failed with status code 401
+[2024-02-29 16:50:12] error: 	Request failed with status code 401
+[2024-02-29 16:51:14] error: 	Request failed with status code 401
+[2024-02-29 16:53:20] error: 	No JWT
+[2024-02-29 16:55:48] error: 	No JWT
+[2024-02-29 16:56:43] error: 	No JWT
+[2024-02-29 16:57:04] error: 	No JWT
+[2024-02-29 16:57:20] error: 	No JWT

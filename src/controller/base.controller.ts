@@ -6,19 +6,23 @@ import { GetByIdDto } from "@/dto/getById.dto";
 import { UpdateByIdDto } from "@/dto/update.dto";
 import { DeleteByIdDto } from "@/dto/delete.dto";
 import { CreateDto } from "@/dto/create.dto";
-const logger = new BaseLog();
 
 export abstract class BaseController {
     public service: string;
+    public logger: BaseLog = new BaseLog();
     constructor(service: string) {
         this.service = service;
     }
 
     async create(req: any, res: any, next: any) {
         try {
-            const {data} = await axios.post(`${this.service}`, req.body);
+            const {data} = await axios.post(`${this.service}`, req.body, {
+                headers: {
+                    Authorization: req.protect
+                }
+            });
             this.validateResponse(data, new CreateDto())
-            logger.log(req, JSON.stringify(data), 'info', this.service)
+            this.logger.log(req, JSON.stringify(data), 'info', this.service)
             return res.json(data);
         } catch (error: any) {
             next(this.erroHandle(error));
@@ -27,26 +31,35 @@ export abstract class BaseController {
 
     async get(req: any, res: any, next: any) {
         try {
-            const {data} = await axios.get(`${this.service}`);
+            const {data} = await axios.get(`${this.service}`, {
+                headers: {
+                    Authorization: req.protect
+                }
+            });
 
             //Validate the response
-            this.validateResponse(data, new GetAllDto())
-            logger.log(req, JSON.stringify(data), 'info', this.service)
+            await this.validateResponse(data, new GetAllDto())
+            this.logger.log(req, JSON.stringify(data), 'info', this.service)            
             return res.json(data);
-        } catch (error: any) {
-            next(this.erroHandle(error));
+        } catch (error: any) {    
+            next(error)        
+            //next(this.erroHandle(error));
         }
     }
 
     async getById(req: any, res: any, next: any) {
         try {
-            const {data} = await axios.get(`${this.service}/${req.params.id}`);
+            const {data} = await axios.get(`${this.service}/${req.params.id}`, {
+                headers: {
+                    Authorization: req.protect
+                }
+            });
 
             //Validate the response
             this.validateResponse(data, new GetByIdDto())
 
 
-            logger.log(req, JSON.stringify(data), 'info', this.service)
+            this.logger.log(req, JSON.stringify(data), 'info', this.service)
             return res.json(data);
         } catch (error: any) {
             next(this.erroHandle(error));
@@ -55,11 +68,15 @@ export abstract class BaseController {
 
     async update(req: any, res: any, next: any) {
         try {
-            const {data} = await axios.put(`${this.service}/${req.params.id}`, req.body);
+            const {data} = await axios.put(`${this.service}/${req.params.id}`, req.body, {
+                headers: {
+                    Authorization: req.protect
+                }
+            });
 
             //Validate the response
             this.validateResponse(data, new UpdateByIdDto())
-            logger.log(req, JSON.stringify(data), 'info', this.service)
+            this.logger.log(req, JSON.stringify(data), 'info', this.service)
             return res.json(data);
         } catch (error: any) {
             next(this.erroHandle(error));
@@ -68,20 +85,22 @@ export abstract class BaseController {
 
     async delete(req: any, res: any, next: any) {
         try {
-            const {data} = await axios.delete(`${this.service}/${req.params.id}`);
+            const {data} = await axios.delete(`${this.service}/${req.params.id}`, {
+                headers: {
+                    Authorization: req.protect
+                }
+            });
 
             //Validate the response
             this.validateResponse(data, new DeleteByIdDto())
-            logger.log(req, JSON.stringify(data), 'info', this.service)
+            this.logger.log(req, JSON.stringify(data), 'info', this.service)
             return res.json(data);
         } catch (error: any) {
             next(this.erroHandle(error));
         }
     }
 
-    async erroHandle(error : any){
-        //console.log('error:::',error.request);
-        
+    erroHandle(error : any){        
         if (error.code === "ECONNREFUSED") {
             error.message = `Service ${this.service} Not Available`
         }
@@ -92,9 +111,14 @@ export abstract class BaseController {
     }
 
     async validateResponse(response: any, dto: any) {
-        dto.data = response.data;
-        dto.message = response.message;
-        dto.status = response.status;
-        await validateOrReject(dto)
+        try {            
+            for (const [key] of Object.entries(response)) {                
+                dto[key] = response[key];
+              }
+            await validateOrReject(dto)
+        } catch (error) {
+            throw error
+        }
+
     }
 }

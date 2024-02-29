@@ -11,7 +11,11 @@ export class AuthenticateController extends BaseController {
     }
     async login(req: any, res: any, next: any) {
         try {
-            const token = await axios.post(`${LOAN_SERVICE}/authenticaion/login`, req.body)
+            const token = await axios.post(`${LOAN_SERVICE}/authenticaion/login`, req.body, {
+                headers: {
+                    Authorization: req.protect
+                }
+            })
             return res.json(token.data);
         } catch (error : any) {
             console.log('errorcode:::',error.response.status);

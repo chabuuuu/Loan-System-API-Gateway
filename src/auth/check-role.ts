@@ -1,20 +1,30 @@
 import BaseError from "@/utils/baseError";
-import roles from "/home/haphuthinh/Documents/Workspace/LoanSystem/Loan-System-API-Gateway/src/auth/abilities";
+import roles from "@/auth/abilities";
+function haveAccess(userRole: string, subject: string, action: string) {
+    if (roles.hasOwnProperty(subject)) {
+        if ((roles)[userRole].level <= (roles)[subject].level) {
+            return true;
+        }
+    }
+    if (!roles[userRole].hasOwnProperty(subject)) {
+        return false;
+    }
+    if ((roles)[userRole][subject].includes(action) || (roles)[userRole][subject].includes('full-control')) {
+        return true;
+    }
 
-interface Roles {
-    [key: string]: {
-        [key: string]: number[];
-    };
+    return false;
 }
 
 export const checkRole = (action: any, subject: any) => (req: any, res: any, next: any) => {
     try {        
         const userRole: string = req.user.role || 'Anonymous';
-        if ((roles as unknown as Roles)[userRole][subject].includes(action) || (roles as unknown as Roles)[userRole][subject].includes(1)) {
+        if (haveAccess(userRole, subject, action)) {
             next();
         } else {
             throw new BaseError(403, 'Forbidden', 'You do not have permission to access this resource')
         }
+
     } catch (error) {
         next(error)
     }

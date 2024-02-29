@@ -1,6 +1,7 @@
-import BaseError from "./baseError";
+import BaseError from "../baseError";
 
 const jwt = require('jsonwebtoken');
+
 
 // Middleware kiểm tra JWT
 export function extractJWT(req: any, res: any, next: any) {
@@ -16,11 +17,11 @@ export function extractJWT(req: any, res: any, next: any) {
             token = token.split(' ')[1];
             jwt.verify(token, process.env.JWT_SECRET, (err: any, user: any) => {
                 if (err) {                
-                    req.user = {
-                        role: 'other'
-                    }             
+                    throw new BaseError(401, "fail", "Invalid Token")         
                 }else{
                     req.user = user;
+                    console.log('user:::', user);
+                    
                 }
                 next();
             });

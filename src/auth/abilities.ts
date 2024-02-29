@@ -1,140 +1,19 @@
-//Subject alias:
-/*
-+ 1: Borrower
-+ 2: Employee
-+ 3: Lender
-+ 4: Contract
-+ 5: LoanPackage
-+ 6: Schedule
-*/
-//Permission alias: 
-/*
-+ 1: manage
-+ 2: read
-+ 3: write
-+ 4: delete
-+ 5: update
-*/
-/*
-Role object format:
-{[Role]: {[Subject]: [Permission]}}
-*/
-const Admin = {"1": [1], "2": [1], "3": [1], "4": [1], "5": [1], "6": [1]}
-const Employee = {"1": [1], "2": [2], "3": [1], "4": [1], "5": [1], "6": [2]}
-const Lender = {"1": [2], "2": [], "3": [], "4": [], "5": [2], "6": []}
-const Borrower = {"1": [], "2": [], "3": [], "4": [2], "5": [2], "6": []}
-const roles = {Admin, Employee, Lender, Borrower}
-// const roles = {
+let Admin : any = {level: 0}
+let Employee : any = {level: 1}
+let Lender : any = {level: 2}
+let Borrower : any = {level :3}
 
-//     Admin: {
-//         [Subject.Borrower]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//         [Subject.Employee]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//         [Subject.Lender]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//         [Subject.Contract]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//         [Subject.LoanPackage]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//         [Subject.Schedule]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//     },
-//     Employee: {
-//         [Subject.Borrower]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//         [Subject.Employee]: {
-//             can : [
-//                 'read'
-//             ]
-//         },
-//         [Subject.Lender]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//         [Subject.Contract]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//         [Subject.LoanPackage]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//         [Subject.Schedule]: {
-//             can : [
-//                 'read'
-//             ]
-//         },
-//     },
-//     Lender : {
-//         [Subject.Borrower]: {
-//             can : []
-//         },
-//         [Subject.Employee]: {
-//             can : []
-//         },
-//         [Subject.Lender]: {
-//             can : []
-//         },
-//         [Subject.Contract]: {
-//             can : [
-//                 'manage'
-//             ]
-//         },
-//         [Subject.LoanPackage]: {
-//             can : [
-//                 'read'
-//             ]
-//         },
-//         [Subject.Schedule]: {
-//             can : []
-//         },
-//     },
-//     Borrower : {
-//         [Subject.Borrower]: {
-//             can : ['read']
-//         },
-//         [Subject.Employee]: {
-//             can : []
-//         },
-//         [Subject.Lender]: {
-//             can : []
-//         },
-//         [Subject.Contract]: {
-//             can : []
-//         },
-//         [Subject.LoanPackage]: {
-//             can : [
-//                 'read'
-//             ]
-//         },
-//         [Subject.Schedule]: {
-//             can : []
-//         },
-//     }
-// }
+Admin['Loanpackage'] = ['full-control']
+Admin['Contract'] = ['full-control']
+Admin['Schedule'] = ['full-control']
+
+Employee['Loanpackage'] = ['full-control']
+Employee['Contract'] = ['read', 'write']
+
+Lender['Loanpackage'] = ['read']
+
+Borrower['Loanpackage'] = ['read']
+
+const roles : any = {Admin, Employee, Lender, Borrower}
+
 export default roles
