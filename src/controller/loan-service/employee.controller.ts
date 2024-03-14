@@ -10,8 +10,11 @@ export class EmployeeController extends BaseController {
     }
     async get(req: any, res: any, next: any): Promise<void> {        
         try {
-            const {data} = await axios.get(`${this.service}`);
-
+            const {data} = await axios.get(`${this.service}`, {
+                headers: {
+                    Authorization: req.protect
+                }
+            });
             //Validate the response
             await this.validateResponse(data, new GetAllEmployeeDto())
             this.logger.log(req, JSON.stringify(data), 'info', this.service)            

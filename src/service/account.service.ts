@@ -1,4 +1,5 @@
 import BaseError from "@/utils/baseError";
+import { jwtCreate } from "@/utils/jwt/jwt-creator";
 import axios from "axios";
 const config = require('config');
 const LOAN_SERVICE = config.get('LOAN_SERVICE');
@@ -26,7 +27,14 @@ export class AccountService {
 
     async getBlockStatus(username : string){
         try {
-            const blockStatus = await axios.get(`${LOAN_SERVICE}/authenticaion/block-status?username=${username}`)
+            const token = jwtCreate("")
+            console.log('token:::', token);
+            
+            const blockStatus = await axios.get(`${LOAN_SERVICE}/authenticaion/block-status?username=${username}`, {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            })
             return blockStatus.data.isBlock;
         } catch (error: any) {
             if (error.code === "ECONNREFUSED"){

@@ -10,6 +10,6 @@ const loanContractRabbitMQ  = new LoanContractRabbitMQ();
 const contractController = new ContractContoller();
 
 const contractRouter = express.Router();
-contractRouter.post('/', jwtAuthenticate, checkRole('write', Subject.Contract), setJwtMicroservice, loanContractRabbitMQ.createLoanContract)
-contractRouter.get('/', jwtAuthenticate, checkRole('read', Subject.Contract), setJwtMicroservice, contractController.get.bind(contractController))
+contractRouter.post('/', jwtAuthenticate, checkRole('write', Subject.Contract), loanContractRabbitMQ.createLoanContract)
+contractRouter.get('/', jwtAuthenticate, checkRole('read', Subject.Contract), contractController.get.bind(contractController))
 export default contractRouter

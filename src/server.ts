@@ -12,6 +12,7 @@ import { GATEWAY_CONFIG } from '@/config/routes';
 const loanContractRabbitMQ  = new LoanContractRabbitMQ();
 import { BaseLog } from '@/logging/BaseLog';
 import { extractJWT } from '@/utils/jwt/jwt-extractor';
+import { setJwtMicroservice } from '@/middleware/set-jwt-microservice';
 const logger = new BaseLog();
 var cors = require('cors')
 const app = express();
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(morgan('combined'));
 app.use(extractJWT)
+app.use(setJwtMicroservice)
 GATEWAY_CONFIG.forEach((config: any) => {
     setupRateLimit(app, config);
     requestMethodCheck(app, config);

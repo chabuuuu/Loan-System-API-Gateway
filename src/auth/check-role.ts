@@ -9,7 +9,8 @@ function haveAccess(userRole: string, subject: string, action: string) {
     if (!roles[userRole].hasOwnProperty(subject)) {
         return false;
     }
-    if ((roles)[userRole][subject].includes(action) || (roles)[userRole][subject].includes('full-control')) {
+    if ((roles)[userRole][subject].includes(action) 
+    || (roles)[userRole][subject].includes('full-control')) {
         return true;
     }
 

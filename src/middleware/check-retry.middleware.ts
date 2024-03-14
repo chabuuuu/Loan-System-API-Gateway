@@ -33,7 +33,7 @@ async function blockUser(username: string) {
 
 
 export const checkRetry = (maxRetry: number) => async (req: any, res: any, next: any) => {
-    try {
+    try {        
         const user = req.body
         if (user.username) {
             const username = user.username;

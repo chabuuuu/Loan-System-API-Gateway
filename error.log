@@ -261,3 +261,26 @@
 [2024-02-29 16:56:43] error: 	No JWT
 [2024-02-29 16:57:04] error: 	No JWT
 [2024-02-29 16:57:20] error: 	No JWT
+[2024-03-04 13:29:21] error: 	Invalid Token
+[2024-03-04 13:29:43] error: 	No JWT
+[2024-03-04 13:29:52] error: 	No JWT
+[2024-03-04 13:31:52] error: 	No JWT
+[2024-03-04 13:32:04] error: 	No JWT
+[2024-03-04 13:33:50] error: 	No JWT
+[2024-03-04 13:34:22] error: 	No JWT
+[2024-03-04 13:36:40] error: 	No JWT
+[2024-03-04 13:36:59] error: 	No JWT
+[2024-03-04 13:38:20] error: 	You do not have permission to access this resource
+[2024-03-04 13:39:20] error: 	Invalid Token
+[2024-03-04 13:42:42] error: 	Login failed
+[2024-03-04 13:46:15] error: 	Login failed
+[2024-03-04 13:48:42] error: 	Request failed with status code 401
+[2024-03-04 13:49:01] error: 	Request failed with status code 401
+[2024-03-04 13:50:14] error: 	jwt malformed
+[2024-03-04 13:55:17] error: 	jwt malformed
+[2024-03-04 13:55:56] error: 	jwt malformed
+[2024-03-04 13:56:27] error: 	jwt malformed
+[2024-03-04 13:57:04] error: 	Request failed with status code 401
+[2024-03-04 13:58:30] error: 	Request failed with status code 401
+[2024-03-04 13:59:24] error: 	Request failed with status code 401
+[2024-03-04 14:01:13] error: 	Request failed with status code 401
