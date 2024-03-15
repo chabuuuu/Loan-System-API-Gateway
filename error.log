@@ -284,3 +284,64 @@
 [2024-03-04 13:58:30] error: 	Request failed with status code 401
 [2024-03-04 13:59:24] error: 	Request failed with status code 401
 [2024-03-04 14:01:13] error: 	Request failed with status code 401
+[2024-03-14 11:33:05] error: 	Loan Service Not Available
+[2024-03-14 11:39:01] error: 	secret or public key must be provided
+[2024-03-14 11:41:10] error: 	API Not Exists
+[2024-03-15 10:59:08] error: 	Request failed with status code 404
+[2024-03-15 10:59:49] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:03:48] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:05:50] error: 	socket hang up
+[2024-03-15 11:06:00] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:08:31] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:09:00] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:11:18] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:41:56] error: 	Request successful
+[2024-03-15 11:42:38] error: 	Request successful
+[2024-03-15 11:43:11] error: 	No Microservice JWT
+[2024-03-15 11:43:43] error: 	Request successful
+[2024-03-15 11:44:12] error: 	Request successful
+[2024-03-15 11:44:30] error: 	Request successful
+[2024-03-15 11:46:33] error: 	Request successful
+[2024-03-15 11:47:39] error: 	Request successful
+[2024-03-15 11:48:50] error: 	User not exists
+[2024-03-15 11:52:20] error: 	User not exists
+[2024-03-15 11:54:15] error: 	User not exists
+[2024-03-15 11:54:49] error: 	User not exists
+[2024-03-15 11:56:21] error: 	User not exists
+[2024-03-15 11:57:30] error: 	User not exists

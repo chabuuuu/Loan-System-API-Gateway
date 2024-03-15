@@ -457,3 +457,70 @@
 [2024-03-04 13:59:24] error: 	Request failed with status code 401
 [2024-03-04 14:01:13] error: 	Request failed with status code 401
 [2024-03-04 14:03:08] info: 	User haphuthinh_admin GET in http://localhost:3001/api/v1/employees - Content: {"data":[{"id":2,"full_name":"Thinh Ha Phu","date_of_birth":"2002-01-01T00:00:00.000Z","address":"123 Binh Thanh","phone_number":"090921321","email":"thinhhaphu@gmail.com","job_title":"Backend","start_date":"2023-03-03T00:00:00.000Z","salary":1000000,"profile_picture":"","gender":"Nam","accountId":10},{"id":3,"full_name":"Thinh Ha Phu","date_of_birth":"2002-01-01T00:00:00.000Z","address":"123 Binh Thanh","phone_number":"090921321","email":"testhaphu@gmail.com","job_title":"Backend","start_date":"2023-03-03T00:00:00.000Z","salary":1000000,"profile_picture":"","gender":"Nam","accountId":16}],"page":"1","perPage":"10","totalCount":"2","from":"prisma"}
+[2024-03-14 11:33:05] error: 	Loan Service Not Available
+[2024-03-14 11:39:01] error: 	secret or public key must be provided
+[2024-03-14 11:41:10] error: 	API Not Exists
+[2024-03-15 10:59:08] error: 	Request failed with status code 404
+[2024-03-15 10:59:49] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:03:48] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:05:50] error: 	socket hang up
+[2024-03-15 11:06:00] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:08:31] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:09:00] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:10:01] info: 	User undefined GET in http://localhost:3001/api/v1/loan-package - Content: {"status":"success","data":[{"id":"b6eafbe7-1885-4342-894f-a3344ea1967d","name":"Vay mua xe lãi thấp","guarantee_type":"Tài sản","interest_rate":"0.25","duration_by_day":250,"description":"Thích hợp vay vốn mua xe","max_money":"500000","min_money":"100000","interest_period_by_day":30}],"message":"Request successful"}
+[2024-03-15 11:10:16] info: 	User undefined GET in http://localhost:3001/api/v1/loan-package - Content: {"status":"success","data":[{"id":"b6eafbe7-1885-4342-894f-a3344ea1967d","name":"Vay mua xe lãi thấp","guarantee_type":"Tài sản","interest_rate":"0.25","duration_by_day":250,"description":"Thích hợp vay vốn mua xe","max_money":"500000","min_money":"100000","interest_period_by_day":30}],"message":"Request successful"}
+[2024-03-15 11:11:18] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray, isNotEmpty 
+
+[2024-03-15 11:11:35] info: 	User undefined GET in http://localhost:3001/api/v1/loan-package - Content: {"status":"success","data":[{"id":"b6eafbe7-1885-4342-894f-a3344ea1967d","name":"Vay mua xe lãi thấp","guarantee_type":"Tài sản","interest_rate":"0.25","duration_by_day":250,"description":"Thích hợp vay vốn mua xe","max_money":"500000","min_money":"100000","interest_period_by_day":30}],"message":"Request successful"}
+[2024-03-15 11:12:13] info: 	User undefined GET in http://localhost:3001/api/v1/loan-package - Content: {"status":"success","data":[{"id":"b6eafbe7-1885-4342-894f-a3344ea1967d","name":"Vay mua xe lãi thấp","guarantee_type":"Tài sản","interest_rate":"0.25","duration_by_day":250,"description":"Thích hợp vay vốn mua xe","max_money":"500000","min_money":"100000","interest_period_by_day":30}],"message":"Request successful"}
+[2024-03-15 11:12:31] info: 	User undefined GET in http://localhost:3001/api/v1/loan-package - Content: {"status":"success","data":[{"id":"b6eafbe7-1885-4342-894f-a3344ea1967d","name":"Vay mua xe lãi thấp","guarantee_type":"Tài sản","interest_rate":"0.25","duration_by_day":250,"description":"Thích hợp vay vốn mua xe","max_money":"500000","min_money":"100000","interest_period_by_day":30}],"message":"Request successful"}
+[2024-03-15 11:15:50] info: 	User undefined GET in http://localhost:3001/api/v1/loan-package - Content: {"status":"success","data":[{"id":"b6eafbe7-1885-4342-894f-a3344ea1967d","name":"Vay mua xe lãi thấp","guarantee_type":"Tài sản","interest_rate":"0.25","duration_by_day":250,"description":"Thích hợp vay vốn mua xe","max_money":"500000","min_money":"100000","interest_period_by_day":30}],"message":"Request successful"}
+[2024-03-15 11:41:56] error: 	Request successful
+[2024-03-15 11:42:38] error: 	Request successful
+[2024-03-15 11:43:11] error: 	No Microservice JWT
+[2024-03-15 11:43:43] error: 	Request successful
+[2024-03-15 11:44:12] error: 	Request successful
+[2024-03-15 11:44:30] error: 	Request successful
+[2024-03-15 11:46:33] error: 	Request successful
+[2024-03-15 11:47:39] error: 	Request successful
+[2024-03-15 11:48:50] error: 	User not exists
+[2024-03-15 11:52:20] error: 	User not exists
+[2024-03-15 11:54:15] error: 	User not exists
+[2024-03-15 11:54:49] error: 	User not exists
+[2024-03-15 11:56:21] error: 	User not exists
+[2024-03-15 11:57:30] error: 	User not exists

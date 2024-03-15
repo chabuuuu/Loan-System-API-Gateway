@@ -11,14 +11,15 @@ export class AuthenticateController extends BaseController {
     }
     async login(req: any, res: any, next: any) {
         try {
-            const token = await axios.post(`${LOAN_SERVICE}/authenticaion/login`, req.body, {
+            const token = await axios.post(`${LOAN_SERVICE}/authentication/login`, req.body, {
                 headers: {
-                    Authorization: req.protect
+                    Microservice_protect: req.protect
                 }
             })
             return res.json(token.data);
         } catch (error : any) {
             console.log('errorcode:::',error.response.status);
+            error.response.data.statusCode = error.response.status;
             if (error.response.status === 401){
                 const user = req.body;
                 console.log('user:::',user)

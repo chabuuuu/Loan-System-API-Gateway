@@ -18,7 +18,7 @@ export abstract class BaseController {
         try {
             const {data} = await axios.post(`${this.service}`, req.body, {
                 headers: {
-                    Authorization: req.protect
+                    Microservice_protect: req.protect
                 }
             });
             this.validateResponse(data, new CreateDto())
@@ -33,7 +33,7 @@ export abstract class BaseController {
         try {
             const {data} = await axios.get(`${this.service}`, {
                 headers: {
-                    Authorization: req.protect
+                    Microservice_protect: req.protect
                 }
             });
 
@@ -51,7 +51,7 @@ export abstract class BaseController {
         try {
             const {data} = await axios.get(`${this.service}/${req.params.id}`, {
                 headers: {
-                    Authorization: req.protect
+                    Microservice_protect: req.protect
                 }
             });
 
@@ -70,7 +70,7 @@ export abstract class BaseController {
         try {
             const {data} = await axios.put(`${this.service}/${req.params.id}`, req.body, {
                 headers: {
-                    Authorization: req.protect
+                    Microservice_protect: req.protect
                 }
             });
 
@@ -87,7 +87,7 @@ export abstract class BaseController {
         try {
             const {data} = await axios.delete(`${this.service}/${req.params.id}`, {
                 headers: {
-                    Authorization: req.protect
+                    Microservice_protect: req.protect
                 }
             });
 

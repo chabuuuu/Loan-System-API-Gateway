@@ -16,7 +16,7 @@ import { setJwtMicroservice } from '@/middleware/set-jwt-microservice';
 const logger = new BaseLog();
 var cors = require('cors')
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000 ;
 app.use(
     express.urlencoded({
         extended: true,
@@ -35,12 +35,15 @@ GATEWAY_CONFIG.forEach((config: any) => {
 
 route(app);
 app.use((error: any, req: any, res: any, next: any) => {
+    console.log('error code:' ,error.statusCode);
+
     error.statusCode = error.statusCode || 500;
     error.status = error.status || 'error';
     if (!error.message) {
         error.message = error;
     }
     console.log('This error' + error);
+    
     logger.customLog(error.message, 'error');
     res.status(error.statusCode).json({
         statusCode: error.statusCode,

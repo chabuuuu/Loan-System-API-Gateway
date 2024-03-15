@@ -25,14 +25,15 @@ export class AccountService {
         }
     }
 
-    async getBlockStatus(username : string){
+    async getBlockStatus(email : string, role: any, microservice_protect: any){
         try {
             const token = jwtCreate("")
             console.log('token:::', token);
             
-            const blockStatus = await axios.get(`${LOAN_SERVICE}/authenticaion/block-status?username=${username}`, {
+            const blockStatus = await axios.get(`${LOAN_SERVICE}/authentication/block-status?email=${email}&role=${role}`, {
                 headers: {
-                    'Authorization': 'Bearer ' + token
+                    'Authorization': 'Bearer ' + token,
+                    Microservice_protect: microservice_protect
                 }
             })
             return blockStatus.data.isBlock;
