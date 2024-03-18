@@ -1,5 +1,6 @@
+
+import { BaseController } from '@/controller/base.controller';
 import { GetAllEmployeeDto } from '@/dto/employee/get-all.dto';
-import { BaseController } from '../base.controller';
 import axios from 'axios';
 const config = require('config');
 const LOAN_SERVICE = config.get('LOAN_SERVICE');

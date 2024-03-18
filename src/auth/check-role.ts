@@ -19,6 +19,8 @@ function haveAccess(userRole: string, subject: string, action: string) {
 
 export const checkRole = (action: any, subject: any) => (req: any, res: any, next: any) => {
     try {        
+        console.log('Role', req.user.role);
+        
         const userRole: string = req.user.role || 'Anonymous';
         if (haveAccess(userRole, subject, action)) {
             next();

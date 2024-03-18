@@ -1,11 +1,14 @@
 import express from 'express';
-import { requestMethodCheck } from './config/requestMethod';
-import BaseError from './utils/baseError';
 const morgan = require("morgan");
 import 'dotenv/config'
+
+import BaseError from './utils/baseError';
 import { LoanContractRabbitMQ } from './rabbitmq/LoanContract/LoanContract.rabbitmq';
+import { requestMethodCheck } from './config/requestMethod';
 import { route } from './routes';
 import { HTTPStatusMessage } from './utils/http-status-code';
+
+
 import helmet from 'helmet';
 import { setupRateLimit } from '@/config/ratelimit';
 import { GATEWAY_CONFIG } from '@/config/routes';
@@ -35,8 +38,7 @@ GATEWAY_CONFIG.forEach((config: any) => {
 
 route(app);
 app.use((error: any, req: any, res: any, next: any) => {
-    console.log('error code:' ,error.statusCode);
-
+    error = error.response.data
     error.statusCode = error.statusCode || 500;
     error.status = error.status || 'error';
     if (!error.message) {

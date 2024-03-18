@@ -524,3 +524,24 @@
 [2024-03-15 11:54:49] error: 	User not exists
 [2024-03-15 11:56:21] error: 	User not exists
 [2024-03-15 11:57:30] error: 	User not exists
+[2024-03-18 15:04:32] error: 	Loan Service Not Available
+[2024-03-18 15:11:25] error: 	Invalid role type
+[2024-03-18 15:21:11] error: 	API Not Exists
+[2024-03-18 15:32:22] error: 	API Not Exists
+[2024-03-18 15:32:55] error: 	API Not Exists
+[2024-03-18 15:34:32] error: 	Cannot read properties of undefined (reading 'data')
+[2024-03-18 15:35:34] error: 	Cannot read properties of undefined (reading 'data')
+[2024-03-18 15:35:41] error: 	Cannot read properties of undefined (reading 'level')
+[2024-03-18 15:54:24] error: 	Cannot read properties of undefined (reading 'level')
+[2024-03-18 15:55:20] error: 	Cannot read properties of undefined (reading 'level')
+[2024-03-18 15:55:54] error: 	Cannot read properties of undefined (reading 'level')
+[2024-03-18 15:57:55] error: 	Cannot read properties of undefined (reading 'level')
+[2024-03-18 15:59:33] error: 	Cannot read properties of undefined (reading 'level')
+[2024-03-18 16:02:16] error: 	Request failed with status code 404
+[2024-03-18 16:03:51] error: 	Request failed with status code 404
+[2024-03-18 16:12:59] error: 	Request failed with status code 404
+[2024-03-18 16:15:30] error: 	Request failed with status code 404
+[2024-03-18 16:17:03] error: 	Request failed with status code 404
+[2024-03-18 16:17:35] error: 	Request failed with status code 404
+[2024-03-18 16:17:46] error: 	Request failed with status code 404
+[2024-03-18 16:18:06] error: 	API Not Exists

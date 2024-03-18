@@ -1,6 +1,6 @@
 import BaseError from "@/utils/baseError";
 import axios from "axios";
-const authURL = process.env.AUTH_URL || 'http://localhost:3001/api/v1/authenticaion/me';
+const authURL = process.env.AUTH_URL || 'http://localhost:3001/api/v1/authentication/me';
 
 async function getUser(token: string) {
     try {
@@ -27,7 +27,7 @@ export const jwtAuthenticate = async (req: any, res: any, next: any) => {
                       if (user.isBlock){
                         throw new BaseError(401, "fail", "This account is currently blocked")
                       }
-                      req.user = user;
+                      req.user = user.data;
                       next();
                     }
                 catch (error: any) {

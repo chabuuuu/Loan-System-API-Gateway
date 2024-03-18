@@ -35,11 +35,12 @@ export abstract class BaseController {
                 headers: {
                     Microservice_protect: req.protect
                 }
-            });
-
+            });            
             //Validate the response
             await this.validateResponse(data, new GetAllDto())
-            this.logger.log(req, JSON.stringify(data), 'info', this.service)            
+           // console.log(req, JSON.stringify(data), 'info', this.service);
+            
+            //this.logger.log(req, JSON.stringify(data), 'info', this.service)            
             return res.json(data);
         } catch (error: any) {    
             next(error)        

@@ -13,16 +13,16 @@ const authURL = process.env.AUTH_URL || 'http://localhost:3001/api/v1/authentica
 const accountService = new AccountService();
 const ejs = require('ejs');
 
-async function blockUser(username: string) {
+async function blockUser(email: string, role: string, microservice_token: string) {
     try {
         const token = jwt.sign(
             { aud: LOAN_SERVICE },
             process.env.JWT_SECRET,
             { expiresIn: process.env.JWT_EXPIRES_IN },
         );
-        await axios.post(`${LOAN_SERVICE}/authenticaion/block`, { username: username }, {
+        await axios.post(`${LOAN_SERVICE}/authenticaion/block-account`, { email: email, role: role }, {
             headers: {
-                'Authorization': token
+                Microservice_protect: microservice_token
             }
         })
     } catch (error) {
@@ -46,7 +46,7 @@ export const checkRetry = (maxRetry: number) => async (req: any, res: any, next:
             }
             const count = await countRetryService.getRetryCountByUsername(email);
             if (count >= maxRetry) {
-                await blockUser(email)
+                await blockUser(email, role, req.protect);
                 // const email = await accountService.getUserEmail(email);
                 const root = process.cwd();
                 ejs.renderFile(root + '/src/views//email/user-blocked.ejs',
