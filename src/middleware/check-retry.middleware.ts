@@ -20,7 +20,7 @@ async function blockUser(email: string, role: string, microservice_token: string
             process.env.JWT_SECRET,
             { expiresIn: process.env.JWT_EXPIRES_IN },
         );
-        await axios.post(`${LOAN_SERVICE}/authenticaion/block-account`, { email: email, role: role }, {
+        await axios.post(`${LOAN_SERVICE}/authentication/block-account`, { email: email, role: role }, {
             headers: {
                 Microservice_protect: microservice_token
             }

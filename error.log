@@ -366,3 +366,19 @@
 [2024-03-18 16:17:35] error: 	Request failed with status code 404
 [2024-03-18 16:17:46] error: 	Request failed with status code 404
 [2024-03-18 16:18:06] error: 	API Not Exists
+[2024-03-18 16:55:24] error: 	This account is currently blocked
+[2024-03-18 16:55:35] error: 	This account is currently blocked
+[2024-03-18 16:56:22] error: 	Login failed: Wrong password
+[2024-03-18 16:56:23] error: 	Login failed: Wrong password
+[2024-03-18 16:56:24] error: 	Login failed: Wrong password
+[2024-03-18 16:57:00] error: 	Login failed: Wrong password
+[2024-03-18 16:57:02] error: 	Login failed: Wrong password
+[2024-03-18 16:57:02] error: 	API Not Exists
+[2024-03-18 16:59:31] error: 	Login failed: Wrong password
+[2024-03-18 16:59:38] error: 	Login failed: Wrong password
+[2024-03-18 16:59:38] error: 	Login failed: Wrong password
+[2024-03-18 16:59:39] error: 	Login failed: Wrong password
+[2024-03-18 16:59:40] error: 	Login failed: Wrong password
+[2024-03-18 17:03:44] error: 	You have reached the maximum number of retries
+[2024-03-18 17:04:26] error: 	You have reached the maximum number of retries
+[2024-03-18 17:04:31] error: 	You have reached the maximum number of retries

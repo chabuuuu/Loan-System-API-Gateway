@@ -16,6 +16,7 @@ const loanContractRabbitMQ  = new LoanContractRabbitMQ();
 import { BaseLog } from '@/logging/BaseLog';
 import { extractJWT } from '@/utils/jwt/jwt-extractor';
 import { setJwtMicroservice } from '@/middleware/set-jwt-microservice';
+import { AxiosError } from 'axios';
 const logger = new BaseLog();
 var cors = require('cors')
 const app = express();
@@ -38,7 +39,10 @@ GATEWAY_CONFIG.forEach((config: any) => {
 
 route(app);
 app.use((error: any, req: any, res: any, next: any) => {
-    error = error.response.data
+    console.log('Error:::', error);
+    if (error instanceof AxiosError) {
+        error = error.response!.data
+    }
     error.statusCode = error.statusCode || 500;
     error.status = error.status || 'error';
     if (!error.message) {
