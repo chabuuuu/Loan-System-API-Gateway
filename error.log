@@ -382,3 +382,112 @@
 [2024-03-18 17:03:44] error: 	You have reached the maximum number of retries
 [2024-03-18 17:04:26] error: 	You have reached the maximum number of retries
 [2024-03-18 17:04:31] error: 	You have reached the maximum number of retries
+[2024-03-18 17:06:14] error: 	API Not Exists
+[2024-03-18 17:07:19] error: 	API Not Exists
+[2024-03-18 17:07:35] error: 	API Not Exists
+[2024-03-18 17:07:48] error: 	An instance of GetAllEmployeeDto has failed the validation:
+ - property page has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property perPage has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property totalCount has failed the following constraints: isString, isNotEmpty 
+,An instance of GetAllEmployeeDto has failed the validation:
+ - property from has failed the following constraints: isString, isNotEmpty 
+
+[2024-03-19 10:38:18] error: 	No Microservice JWT
+[2024-03-19 10:38:34] error: 	No Microservice JWT
+[2024-03-19 10:39:05] error: 	No Microservice JWT
+[2024-03-19 10:40:04] error: 	No Microservice JWT
+[2024-03-19 10:41:21] error: 	No Microservice JWT
+[2024-03-19 13:43:06] error: 	No authorization jwt
+[2024-03-19 13:46:53] error: 	Request successful
+[2024-03-19 13:47:36] error: 	No authorization jwt
+[2024-03-19 13:48:12] error: 	No authorization jwt
+[2024-03-19 14:08:11] error: 	Request successful
+[2024-03-19 14:10:50] error: 	[object Object]
+[2024-03-19 14:12:48] error: 	Cannot convert undefined or null to object
+[2024-03-19 14:14:25] error: 	Cannot convert undefined or null to object
+[2024-03-19 14:15:35] error: 	Cannot convert undefined or null to object
+[2024-03-19 14:16:26] error: 	Cannot convert undefined or null to object
+[2024-03-19 14:17:33] error: 	Cannot convert undefined or null to object
+[2024-03-19 14:18:48] error: 	Cannot convert undefined or null to object
+[2024-03-19 14:19:26] error: 	Account not found
+[2024-03-19 14:19:42] error: 	Account not found
+[2024-03-19 14:26:54] error: 	Email and password are required
+[2024-03-19 14:48:58] error: 	Cannot read properties of undefined (reading 'data')
+[2024-03-19 14:49:02] error: 	Loan Service Not Available
+[2024-03-19 14:51:07] error: 	Cannot read properties of undefined (reading 'findOne')
+[2024-03-19 14:51:28] error: 	email must be a string, email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 15:22:40] error: 	email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 15:22:44] error: 	email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 15:23:18] error: 	email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 15:23:43] error: 	Cannot set properties of undefined (setting 'lang')
+[2024-03-19 15:24:05] error: 	Cannot set properties of undefined (setting 'lang')
+[2024-03-19 15:24:49] error: 	Cannot set properties of undefined (setting 'lang')
+[2024-03-19 15:25:16] error: 	Cannot set properties of undefined (setting 'lang')
+[2024-03-19 15:25:50] error: 	Cannot set properties of undefined (setting 'lang')
+[2024-03-19 15:26:13] error: 	Cannot read properties of undefined (reading 'constructor')
+[2024-03-19 15:26:47] error: 	Cannot read properties of undefined (reading 'constructor')
+[2024-03-19 15:27:14] error: 	Cannot read properties of undefined (reading 'constructor')
+[2024-03-19 15:28:12] error: 	Cannot read properties of undefined (reading 'constructor')
+[2024-03-19 15:29:49] error: 	Cannot read properties of undefined (reading 'data')
+[2024-03-19 15:51:33] error: 	Cannot read properties of undefined (reading 'constructor')
+[2024-03-19 15:51:53] error: 	Cannot read properties of undefined (reading 'constructor')
+[2024-03-19 15:52:14] error: 	messages.isEmail, email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 15:56:11] error: 	messages.isEmail, email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 15:56:26] error: 	messages.isEmail, email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 15:57:29] error: 	logWarnFn is not a function
+[2024-03-19 15:59:24] error: 	logWarnFn is not a function
+[2024-03-19 16:01:40] error: 	messages.isEmail, email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 16:02:55] error: 	not a email, email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 16:05:10] error: 	Not a valid email, email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 16:05:43] error: 	Not a valid email, email should not be empty,role must be one of the following values: , role should not be empty
+[2024-03-19 16:30:54] error: 	Not a valid email, Email must have value,role must be one of the following values: , Role must have value
+[2024-03-19 16:30:55] error: 	Not a valid email, Email must have value,role must be one of the following values: , Role must have value
+[2024-03-19 16:32:35] error: 	Not a valid email, Email must have value,role must be one of the following values: , Role must have value
+[2024-03-19 16:32:41] error: 	Not a valid email, Email must have value,role must be one of the following values: , Role must have value
+[2024-03-19 16:32:41] error: 	Not a valid email, Email must have value,role must be one of the following values: , Role must have value
+[2024-03-19 16:33:23] error: 	Not a valid email, Email must have value,role must be one of the following values: , Role must have value
+[2024-03-19 16:33:41] error: 	Not a valid email, Email must have value,role must be one of the following values: , Role must have value
+[2024-03-19 16:33:57] error: 	Not a valid email, Email must have value,role must be one of the following values: , Role must have value
+[2024-03-19 16:35:00] error: 	Account not found
+[2024-03-19 16:35:16] error: 	Account not found
+[2024-03-19 16:35:20] error: 	Email and password are required
+[2024-03-19 16:35:26] error: 	Cannot read properties of undefined (reading 'data')
+[2024-03-19 16:35:29] error: 	Loan Service Not Available
+[2024-03-19 16:35:47] error: 	Loan Service Not Available
+[2024-03-19 16:36:46] error: 	Account not found
+[2024-03-19 16:37:21] error: 	Not a valid email
+[2024-03-19 16:42:27] error: 	Not a valid email
+[2024-03-19 16:43:31] error: 	Not a valid email
+[2024-03-19 16:45:30] error: 	Email không hợp lệ
+[2024-03-19 16:45:42] error: 	Email không hợp lệ,Password không được để trống
+[2024-03-19 16:46:03] error: 	Not a valid email,Password must have value
+[2024-03-19 16:48:59] error: 	Not a valid email,Password must have value
+[2024-03-19 16:49:00] error: 	Not a valid email,Password must have value
+[2024-03-19 16:53:01] error: 	Not a valid email, Email must have value,Password must have value
+[2024-03-19 16:53:10] error: 	Email không hợp lệ, Email không được để trống,Password không được để trống
+[2024-03-19 17:05:49] error: 	An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+
+[2024-03-19 17:06:48] error: 	An instance of GetAllDto has failed the validation:
+ - property message has failed the following constraints: isString, isNotEmpty 
+
+[2024-03-19 17:11:01] error: 	An instance of GetAllDto has failed the validation:
+ - property status has failed the following constraints: isString, isNotEmpty 
+
+[2024-03-19 17:16:04] error: 	An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray 
+
+[2024-03-19 17:16:37] error: 	An instance of GetAllDto has failed the validation:
+ - property data has failed the following constraints: isArray 
+
+[2024-03-19 17:18:26] error: 	Cannot read properties of undefined (reading 'role')
+[2024-03-19 17:18:29] error: 	Cannot read properties of undefined (reading 'role')
+[2024-03-19 17:19:15] error: 	Cannot read properties of undefined (reading 'role')
+[2024-03-19 17:22:29] error: 	Cannot read properties of undefined (reading 'role')
+[2024-03-19 17:23:12] error: 	Cannot read properties of undefined (reading 'role')
+[2024-03-19 17:23:39] error: 	Cannot read properties of undefined (reading 'role')
+[2024-03-19 17:23:57] error: 	Cannot read properties of undefined (reading 'level')
+[2024-03-19 17:25:00] error: 	Cannot read properties of undefined (reading 'level')
+[2024-03-19 17:29:44] error: 	No authorization jwt

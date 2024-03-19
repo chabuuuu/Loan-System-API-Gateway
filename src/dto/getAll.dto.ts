@@ -1,13 +1,13 @@
-import { IsArray, IsNotEmpty, IsString } from "class-validator";
+import { IsArray, IsNotEmpty, IsOptional, IsString } from "class-validator";
 
 export class GetAllDto{
-    @IsNotEmpty()
-    @IsString()
-    status!: number;
-    @IsNotEmpty()
-    @IsString()
-    message!: string;
-    @IsNotEmpty()
-    @IsArray()
-    data : any;
+    // @IsOptional()
+    // @IsString()
+    // message?: string;
+    // @IsNotEmpty()
+    // @IsArray()
+    // data : any;
+
+    // @IsNotEmpty()
+    // statusCode!: number
 }

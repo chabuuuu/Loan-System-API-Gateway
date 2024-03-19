@@ -18,7 +18,8 @@ export abstract class BaseController {
         try {
             const {data} = await axios.post(`${this.service}`, req.body, {
                 headers: {
-                    Microservice_protect: req.protect
+                    "Accept-Language": req.headers['accept-language'] || 'en',
+                    Microservice_protect: req.protect,
                 }
             });
             this.validateResponse(data, new CreateDto())
@@ -31,9 +32,12 @@ export abstract class BaseController {
 
     async get(req: any, res: any, next: any) {
         try {
+            //console.log('mircoservice protector:::', req.protect);
+            
             const {data} = await axios.get(`${this.service}`, {
                 headers: {
-                    Microservice_protect: req.protect
+                    "Accept-Language": req.headers['accept-language'] || 'en',
+                    "Microservice_protect": req.protect,
                 }
             });            
             //Validate the response
@@ -52,7 +56,8 @@ export abstract class BaseController {
         try {
             const {data} = await axios.get(`${this.service}/${req.params.id}`, {
                 headers: {
-                    Microservice_protect: req.protect
+                    "Accept-Language": req.headers['accept-language'] || 'en',
+                    Microservice_protect: req.protect,
                 }
             });
 
@@ -71,7 +76,8 @@ export abstract class BaseController {
         try {
             const {data} = await axios.put(`${this.service}/${req.params.id}`, req.body, {
                 headers: {
-                    Microservice_protect: req.protect
+                    "Accept-Language": req.headers['accept-language'] || 'en',
+                    Microservice_protect: req.protect,
                 }
             });
 
@@ -88,7 +94,8 @@ export abstract class BaseController {
         try {
             const {data} = await axios.delete(`${this.service}/${req.params.id}`, {
                 headers: {
-                    Microservice_protect: req.protect
+                    "Accept-Language": req.headers['accept-language'] || 'en',
+                    Microservice_protect: req.protect,
                 }
             });
 

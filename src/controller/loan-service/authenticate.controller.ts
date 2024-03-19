@@ -13,10 +13,16 @@ export class AuthenticateController extends BaseController {
         try {
             const token = await axios.post(`${LOAN_SERVICE}/authentication/login`, req.body, {
                 headers: {
-                    Microservice_protect: req.protect
+                    Microservice_protect: req.protect,
+                    "Accept-Language": req.headers['accept-language'] || 'en',
                 }
             })
-            return res.json(token.data);
+            const response = {
+                token: token.data,
+                service: 'loan-service'
+            }
+
+            return res.json(response);
         } catch (error : any) {
             console.log('errorcode:::',error.response.status);
             // error.response.data.statusCode = error.response.status;

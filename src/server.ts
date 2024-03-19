@@ -17,6 +17,7 @@ import { BaseLog } from '@/logging/BaseLog';
 import { extractJWT } from '@/utils/jwt/jwt-extractor';
 import { setJwtMicroservice } from '@/middleware/set-jwt-microservice';
 import { AxiosError } from 'axios';
+import { formatResponse } from '@/middleware/format-response.middleware';
 const logger = new BaseLog();
 var cors = require('cors')
 const app = express();
@@ -36,10 +37,10 @@ GATEWAY_CONFIG.forEach((config: any) => {
     setupRateLimit(app, config);
     requestMethodCheck(app, config);
 })
-
+//app.use(formatResponse)
 route(app);
 app.use((error: any, req: any, res: any, next: any) => {
-    console.log('Error:::', error);
+    //console.log('Error:::', error);
     if (error instanceof AxiosError) {
         error = error.response!.data
     }
